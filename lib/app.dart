@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+import 'package:val_graphics_mobile_app/screens/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -19,10 +19,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // themeMode: ThemeMode.system, // 🔹 follow system setting (light/dark)
-      themeMode: ThemeMode.dark, // 🔹 follow system setting (light/dark)
-      home: const HomeScreen(),
+      themeMode: ThemeMode.light, // 🔹 follow system setting (light/dark)
       debugShowCheckedModeBanner: false,
+      home: const SplashScreen(),
     );
   }
-
 }
