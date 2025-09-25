@@ -9,7 +9,7 @@ final List<ServiceItem> SERVICES = [
     icon: Icons.directions_car,
   ),
   ServiceItem(
-    title: 'Interior Fitouts',
+    title: 'Interior Fit-outs',
     imagePath: 'assets/images/interior.png',
     icon: Icons.print,
   ),
