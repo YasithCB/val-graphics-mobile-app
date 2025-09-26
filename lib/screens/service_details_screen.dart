@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:val_graphics_mobile_app/widgets/sub_service_card.dart';
 
 import '../db/constants.dart';
 import '../models/service_model.dart'; // <-- import your models
@@ -64,98 +65,7 @@ class ServiceDetailsScreen extends StatelessWidget {
             const SizedBox(height: 12),
 
             // 🔹 List of Subcategories
-            ...service.subcategories.map(
-              (sub) => Card(
-                margin: const EdgeInsets.only(bottom: 16),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                elevation: 3,
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Sub Image
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Image.asset(
-                          sub.image,
-                          width: double.infinity,
-                          height: 150,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-
-                      // Sub Title + Desc
-                      Text(
-                        sub.name,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      const SizedBox(height: 6),
-                      Text(
-                        sub.desc,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey.shade600,
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-
-                      // Materials Table
-                      // if (sub.materials != null &&
-                      //     sub.materials!.isNotEmpty) ...[
-                      //   const Text(
-                      //     "Materials & Rates",
-                      //     style: TextStyle(
-                      //       fontSize: 16,
-                      //       fontWeight: FontWeight.w500,
-                      //     ),
-                      //   ),
-                      //   const SizedBox(height: 8),
-                      //   Column(
-                      //     children: sub.materials!
-                      //         .map(
-                      //           (mat) => Container(
-                      //             margin: const EdgeInsets.only(bottom: 8),
-                      //             padding: const EdgeInsets.all(12),
-                      //             decoration: BoxDecoration(
-                      //               color: Colors.grey.shade100,
-                      //               borderRadius: BorderRadius.circular(12),
-                      //             ),
-                      //             child: Row(
-                      //               mainAxisAlignment:
-                      //                   MainAxisAlignment.spaceBetween,
-                      //               children: [
-                      //                 Expanded(
-                      //                   child: Text(
-                      //                     mat.name,
-                      //                     style: const TextStyle(fontSize: 14),
-                      //                   ),
-                      //                 ),
-                      //                 Text(
-                      //                   _formatRate(mat),
-                      //                   style: const TextStyle(
-                      //                     fontWeight: FontWeight.bold,
-                      //                     color: Colors.black87,
-                      //                   ),
-                      //                 ),
-                      //               ],
-                      //             ),
-                      //           ),
-                      //         )
-                      //         .toList(),
-                      //   ),
-                      // ],
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            ...service.subcategories.map((sub) => SubServiceCard(service: sub)),
           ],
         ),
       ),

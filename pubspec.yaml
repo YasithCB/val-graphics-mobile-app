@@ -30,6 +30,7 @@ environment:
 dependencies:
   webview_flutter: ^4.0.0
   http: ^1.2.2   # or latest version
+  shared_preferences: ^2.2.2
 
   flutter:
     sdk: flutter
@@ -64,8 +65,11 @@ flutter:
     - assets/images/vehicle-wrapping.png
     - assets/images/wallpapers.jpg
     - assets/images/sample-avatar.webp
+    - assets/images/user-avatar-robot.webp
 
     - assets/images/offer-banner/b1.webp
+    - assets/images/offer-banner/b2.webp
+    - assets/images/offer-banner/b3.webp
 
     - assets/images/services/1.webp
     - assets/images/services/2.webp

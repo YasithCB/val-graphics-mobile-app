@@ -100,7 +100,7 @@ final List<Map<String, dynamic>> rawCategories = [
   },
   {
     'name': "Interior Fitouts",
-    'image': 'assets/images/services/2.webp',
+    'image': 'assets/images/services/4.webp',
     'description':
         "Creative acrylic and decoration solutions that enhance interiors, signage, and displays with elegance, durability, and a modern professional finish.",
     "subcategories": [
@@ -185,7 +185,7 @@ final List<Map<String, dynamic>> rawCategories = [
   },
   {
     "name": "Digital Printing",
-    "image": "assets/images/services/3.webp",
+    "image": "assets/images/services/2.webp",
     "description":
         "Offering complete digital and printing solutions, including design, branding, marketing materials, and high-quality prints to meet all business needs.",
     "subcategories": [
@@ -248,7 +248,7 @@ final List<Map<String, dynamic>> rawCategories = [
   },
   {
     "name": "Billboard & Signage",
-    "image": "assets/images/services/4.webp",
+    "image": "assets/images/services/3.webp",
     "description":
         "We provide complete board solutions, including design, printing, fabrication, and installation of display boards, branding boards, and custom creations.",
     "subcategories": [
@@ -373,4 +373,13 @@ final List<Map<String, dynamic>> rawCategories = [
 
 final List<ServiceModel> servicesList = rawCategories
     .map((json) => ServiceModel.fromJson(json))
+    .toList();
+
+final List<SubServiceModel> allSubServices = servicesList
+    .expand((category) => category.subcategories)
+    .toList();
+
+// Popular services → first 2 from all services
+final List<SubServiceModel> popularServices = servicesList
+    .expand((category) => (category.subcategories ?? []).take(2))
     .toList();

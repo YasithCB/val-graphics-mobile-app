@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:val_graphics_mobile_app/db/services_data.dart';
 import 'package:val_graphics_mobile_app/models/service_model.dart';
-import 'package:val_graphics_mobile_app/widgets/service_card.dart';
+import 'package:val_graphics_mobile_app/widgets/sub_service_card.dart';
 
 import '../db/constants.dart';
 
@@ -15,7 +15,7 @@ class ExploreTab extends StatefulWidget {
 class _ExploreTabState extends State<ExploreTab> {
   final TextEditingController _controller = TextEditingController();
 
-  List<ServiceModel> _results = [];
+  List<SubServiceModel> _results = [];
 
   void _search() {
     String query = _controller.text.trim().toLowerCase();
@@ -23,7 +23,7 @@ class _ExploreTabState extends State<ExploreTab> {
       if (query.isEmpty) {
         _results.clear();
       } else {
-        _results = servicesList
+        _results = allSubServices
             .where((item) => item.name.toLowerCase().contains(query))
             .toList();
       }
@@ -32,9 +32,9 @@ class _ExploreTabState extends State<ExploreTab> {
 
   @override
   Widget build(BuildContext context) {
-    final List<ServiceModel> itemsToShow =
+    final List<SubServiceModel> itemsToShow =
         _results.isEmpty && _controller.text.isEmpty
-        ? servicesList // default popular services
+        ? popularServices // default popular services
         : _results;
 
     return Scaffold(
@@ -137,7 +137,7 @@ class _ExploreTabState extends State<ExploreTab> {
                         itemCount: itemsToShow.length,
                         itemBuilder: (context, index) {
                           final item = itemsToShow[index];
-                          return ServiceCard(service: item);
+                          return SubServiceCard(service: item);
                         },
                       ),
               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:val_graphics_mobile_app/db/services_data.dart';
 
-import '../../screens/service_details_screen.dart';
+import '../../screens/sub_service_details_screen.dart';
 
 class HorizontalImageGrid extends StatelessWidget {
   const HorizontalImageGrid({super.key});
@@ -12,20 +12,20 @@ class HorizontalImageGrid extends StatelessWidget {
       height: 160, // enough space for image + title
       child: GridView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: servicesList.length,
+        itemCount: popularServices.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 1, // only one row
           mainAxisSpacing: 0,
         ),
         itemBuilder: (context, index) {
-          final item = servicesList[index];
+          final item = popularServices[index];
           return InkWell(
             onTap: () {
               // 🔹 Navigate to Service Details
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ServiceDetailsScreen(service: item),
+                  builder: (context) => SubServiceDetailsScreen(service: item),
                 ),
               );
             },

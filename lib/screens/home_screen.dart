@@ -36,7 +36,12 @@ class _HomeScreenState extends State<HomeScreen> {
     deviceHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      // appBar: AppBar(title: const Text('VAL Graphics'), centerTitle: true),
+      appBar: AppBar(
+        title: const Text('VAL Graphics'),
+        centerTitle: true,
+        backgroundColor: primaryColor,
+        foregroundColor: Colors.white,
+      ),
       backgroundColor: Colors.white,
       body: IndexedStack(index: _currentIndex, children: _pages),
       bottomNavigationBar: CustomBottomNav(

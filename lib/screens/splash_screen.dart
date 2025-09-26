@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:val_graphics_mobile_app/db/constants.dart';
+import 'package:val_graphics_mobile_app/util/storage_util.dart';
 
 import 'home_screen.dart';
 
@@ -17,6 +19,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
+    _checkUserData();
 
     // 🔹 Setup animation
     _controller = AnimationController(
@@ -25,16 +28,21 @@ class _SplashScreenState extends State<SplashScreen>
     );
 
     _fadeAnimation = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
-
     _controller.forward();
+  }
 
-    // 🔹 Navigate after animation finishes + 1s hold
-    Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-      );
-    });
+  Future<void> _checkUserData() async {
+    user = await StorageUtil.getUser() ?? {};
+
+    print('user ::::::::::::::::::::::::::::::::');
+    print(user);
+
+    await Future.delayed(const Duration(seconds: 2)); // splash delay
+
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (_) => HomeScreen()),
+    );
   }
 
   @override

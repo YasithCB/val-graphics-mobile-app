@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:val_graphics_mobile_app/screens/login_screen.dart';
+import 'package:val_graphics_mobile_app/util/storage_util.dart';
 
 import '../db/constants.dart';
+import '../util/snackbar_util.dart';
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
@@ -14,6 +17,29 @@ class _ProfileTabState extends State<ProfileTab> {
   Widget build(BuildContext context) {
     const Color optionIconColor = Colors.black;
     const Color optionIconBackgroundColor = Colors.black12;
+
+    Future<void> handleLogout(BuildContext context) async {
+      await StorageUtil.clear();
+      // clear local var
+      user = {};
+
+      print("🚪 Logged out");
+      SnackBarUtil.show(context, "Logged out");
+
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+        (route) => false, // remove all previous routes
+      );
+    }
+
+    handleLogin() {
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+        (route) => false,
+      );
+    }
 
     return SafeArea(
       child: Padding(
@@ -32,24 +58,24 @@ class _ProfileTabState extends State<ProfileTab> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
+                    children: [
                       CircleAvatar(
                         radius: 50, // 🔹 bigger avatar
                         backgroundImage: AssetImage(
-                          "assets/images/sample-avatar.webp",
+                          "assets/images/user-avatar-robot.webp",
                         ),
                       ),
                       SizedBox(height: 12),
                       Text(
-                        "John Doe",
+                        user['username'] ?? 'Hello, Guest!',
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        "john.doe@email.com",
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        user['email'] ?? 'Log in now for a better experience',
+                        style: TextStyle(fontSize: 14, color: Colors.grey),
                       ),
                     ],
                   ),
@@ -63,18 +89,23 @@ class _ProfileTabState extends State<ProfileTab> {
               // 📋 Options
               Column(
                 children: [
-                  ListTile(
-                    leading: Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: optionIconBackgroundColor,
+                  if (user.isNotEmpty)
+                    ListTile(
+                      leading: Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: optionIconBackgroundColor,
+                        ),
+                        child: Icon(
+                          Icons.edit,
+                          color: optionIconColor,
+                          size: 20,
+                        ),
                       ),
-                      child: Icon(Icons.edit, color: optionIconColor, size: 20),
+                      title: const Text("Edit Profile"),
+                      trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                     ),
-                    title: const Text("Edit Profile"),
-                    trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                  ),
                   ListTile(
                     leading: Container(
                       padding: const EdgeInsets.all(10),
@@ -135,21 +166,20 @@ class _ProfileTabState extends State<ProfileTab> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-                icon: const Icon(Icons.logout_rounded, color: Colors.white),
-                label: const Text(
-                  "Logout",
+                icon: Icon(
+                  user.isEmpty ? Icons.login_outlined : Icons.logout_rounded,
+                  color: Colors.white,
+                ),
+                label: Text(
+                  user.isEmpty ? 'Login Now' : "Logout",
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
                   ),
                 ),
-                onPressed: () {
-                  // TODO: add logout logic
-                  ScaffoldMessenger.of(
-                    context,
-                  ).showSnackBar(const SnackBar(content: Text("Logged out")));
-                },
+                onPressed: () =>
+                    user.isEmpty ? handleLogin() : handleLogout(context),
               ),
             ],
           ),

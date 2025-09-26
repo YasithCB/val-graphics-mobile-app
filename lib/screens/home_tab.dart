@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:val_graphics_mobile_app/db/banners_data.dart';
 import 'package:val_graphics_mobile_app/db/constants.dart';
 import 'package:val_graphics_mobile_app/db/services_data.dart';
+import 'package:val_graphics_mobile_app/screens/notification_screen.dart';
 import 'package:val_graphics_mobile_app/screens/service_details_screen.dart';
 
 import '../widgets/home/horizontal-image-slider.dart';
@@ -33,6 +34,9 @@ class _HomeTabState extends State<HomeTab> {
 
   @override
   Widget build(BuildContext context) {
+    print('user :::::::::::::');
+    print(user);
+
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -47,39 +51,48 @@ class _HomeTabState extends State<HomeTab> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // Check if user exists
                   Row(
                     children: [
                       const CircleAvatar(
                         radius: 28,
                         backgroundImage: AssetImage(
-                          "assets/images/sample-avatar.webp",
-                        ), // replace
+                          "assets/images/user-avatar-robot.webp",
+                        ),
                       ),
                       const SizedBox(width: 12),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
-                            "John Doe",
-                            style: TextStyle(
+                            user['username'] ?? "Hello, Guest!",
+                            style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(height: 2),
                           Text(
-                            "john.doe@email.com",
-                            style: TextStyle(fontSize: 13, color: Colors.grey),
+                            user['email'] ??
+                                "Log in now for a better experience",
+                            style: const TextStyle(
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ],
                       ),
                     ],
                   ),
 
-                  // Notification icon on the right
+                  // Notification icon always on the right
                   IconButton(
                     onPressed: () {
-                      // TODO: handle notification tap
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => NotificationScreen(),
+                        ),
+                      );
                     },
                     icon: const Icon(Icons.notifications_none, size: 28),
                   ),
