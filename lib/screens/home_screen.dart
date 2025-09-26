@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:val_graphics_mobile_app/screens/explore_tab.dart';
 import 'package:val_graphics_mobile_app/screens/home_tab.dart';
-import 'package:val_graphics_mobile_app/screens/tab2.dart';
+import 'package:val_graphics_mobile_app/screens/profile_tab.dart';
 import 'package:val_graphics_mobile_app/screens/tab4.dart';
-import 'package:val_graphics_mobile_app/screens/tab5.dart';
 
+import '../db/constants.dart';
 import '../screens/services_screen.dart';
 import '../widgets/custom_bottom_nav.dart';
 
@@ -18,10 +19,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _pages = const [
     HomeTab(),
-    TabTwo(),
+    ExploreTab(),
     ServicesScreen(),
     TabFour(),
-    TabFive(),
+    ProfileTab(),
   ];
 
   void _onTabSelected(int index) {
@@ -30,8 +31,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // 📏 Get device width & height
+    deviceWidth = MediaQuery.of(context).size.width;
+    deviceHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       // appBar: AppBar(title: const Text('VAL Graphics'), centerTitle: true),
+      backgroundColor: Colors.white,
       body: IndexedStack(index: _currentIndex, children: _pages),
       bottomNavigationBar: CustomBottomNav(
         currentIndex: _currentIndex,

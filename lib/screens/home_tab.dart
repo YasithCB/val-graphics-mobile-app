@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:val_graphics_mobile_app/db/banners_data.dart';
+import 'package:val_graphics_mobile_app/db/constants.dart';
 import 'package:val_graphics_mobile_app/db/services_data.dart';
+import 'package:val_graphics_mobile_app/screens/service_details_screen.dart';
 
 import '../widgets/home/horizontal-image-slider.dart';
 
@@ -21,10 +23,16 @@ class _HomeTabState extends State<HomeTab> {
     super.dispose();
   }
 
+  final Map<String, IconData> serviceIcons = {
+    "Branding": Icons.directions_car,
+    "Interior Fitouts": Icons.chair,
+    "Digital Printing": Icons.print,
+    "Billboard & Signage": Icons.business,
+    "Digital Solutions": Icons.computer,
+  };
+
   @override
   Widget build(BuildContext context) {
-    const Color primaryColor = Color(0xFFE81564);
-
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -33,6 +41,8 @@ class _HomeTabState extends State<HomeTab> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 10),
+
               // === Top Row: Avatar + Name/Email + Notification Icon ===
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -91,12 +101,12 @@ class _HomeTabState extends State<HomeTab> {
                 height: 180,
                 child: PageView.builder(
                   controller: _pageController,
-                  itemCount: IMAGE_BANNERS.length,
+                  itemCount: imageBanners.length,
                   onPageChanged: (index) {
                     setState(() => _currentPage = index);
                   },
                   itemBuilder: (context, i) {
-                    return BannerCard(imagePath: IMAGE_BANNERS[i]);
+                    return BannerCard(imagePath: imageBanners[i]);
                   },
                 ),
               ),
@@ -107,7 +117,7 @@ class _HomeTabState extends State<HomeTab> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
-                  IMAGE_BANNERS.length,
+                  imageBanners.length,
                   (index) => AnimatedContainer(
                     duration: const Duration(milliseconds: 300),
                     margin: const EdgeInsets.symmetric(horizontal: 4),
@@ -136,25 +146,38 @@ class _HomeTabState extends State<HomeTab> {
               // === Categories row (5 icons) ===
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: SERVICES.map((service) {
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: servicesList.map((service) {
                   return Expanded(
                     child: Column(
                       children: [
-                        Container(
-                          padding: const EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: primaryColor.withOpacity(0.10),
-                          ),
-                          child: Icon(
-                            service.icon,
-                            color: primaryColor,
-                            size: 28,
+                        InkWell(
+                          onTap: () {
+                            // 🔹 Navigate to Service Details
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    ServiceDetailsScreen(service: service),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: primaryColor.withOpacity(0.10),
+                            ),
+                            child: Icon(
+                              serviceIcons[service.name] ?? Icons.category,
+                              color: primaryColor,
+                              size: 28,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          service.title,
+                          service.name,
                           style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
@@ -172,17 +195,22 @@ class _HomeTabState extends State<HomeTab> {
               // 🔹 Title row - Popular Services
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text(
                     "Popular Services",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  Text(
-                    "View all",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFFE81564),
+                  InkWell(
+                    onTap: () {
+                      // todo 🔹 Switch tab here
+                    },
+                    child: Text(
+                      "View all",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFFE81564),
+                      ),
                     ),
                   ),
                 ],
@@ -191,30 +219,7 @@ class _HomeTabState extends State<HomeTab> {
               const SizedBox(height: 12),
 
               // 🔹 Horizontal grid of images - Popular Services
-              HorizontalImageGrid(
-                items: [
-                  {
-                    "image": "assets/images/services/1.webp",
-                    "title": "BRANDING",
-                  },
-                  {
-                    "image": "assets/images/services/2.webp",
-                    "title": "PRINTING",
-                  },
-                  {
-                    "image": "assets/images/services/3.webp",
-                    "title": "SIGNAGE",
-                  },
-                  {
-                    "image": "assets/images/services/4.webp",
-                    "title": "INTERIOR",
-                  },
-                  {
-                    "image": "assets/images/services/5.webp",
-                    "title": "DIGITAL",
-                  },
-                ],
-              ),
+              HorizontalImageGrid(),
             ],
           ),
         ),

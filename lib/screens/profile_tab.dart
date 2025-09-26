@@ -1,0 +1,160 @@
+import 'package:flutter/material.dart';
+
+import '../db/constants.dart';
+
+class ProfileTab extends StatefulWidget {
+  const ProfileTab({super.key});
+
+  @override
+  State<ProfileTab> createState() => _ProfileTabState();
+}
+
+class _ProfileTabState extends State<ProfileTab> {
+  @override
+  Widget build(BuildContext context) {
+    const Color optionIconColor = Colors.black;
+    const Color optionIconBackgroundColor = Colors.black12;
+
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        // Use SingleChildScrollView so page content doesn't overflow on small screens
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: deviceHeight * 0.05),
+
+              // === Centered Avatar with Name/Email ===
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      CircleAvatar(
+                        radius: 50, // 🔹 bigger avatar
+                        backgroundImage: AssetImage(
+                          "assets/images/sample-avatar.webp",
+                        ),
+                      ),
+                      SizedBox(height: 12),
+                      Text(
+                        "John Doe",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "john.doe@email.com",
+                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 24),
+              const Divider(color: Colors.black12),
+              const SizedBox(height: 24),
+
+              // 📋 Options
+              Column(
+                children: [
+                  ListTile(
+                    leading: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: optionIconBackgroundColor,
+                      ),
+                      child: Icon(Icons.edit, color: optionIconColor, size: 20),
+                    ),
+                    title: const Text("Edit Profile"),
+                    trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  ),
+                  ListTile(
+                    leading: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: optionIconBackgroundColor,
+                      ),
+                      child: Icon(
+                        Icons.settings,
+                        color: optionIconColor,
+                        size: 20,
+                      ),
+                    ),
+                    title: const Text("Settings"),
+                    trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  ),
+                  ListTile(
+                    leading: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: optionIconBackgroundColor,
+                      ),
+                      child: Icon(Icons.info, color: optionIconColor, size: 20),
+                    ),
+                    title: const Text("About Us"),
+                    trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  ),
+                  ListTile(
+                    leading: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: optionIconBackgroundColor,
+                      ),
+                      child: Icon(
+                        Icons.help_center,
+                        color: optionIconColor,
+                        size: 20,
+                      ),
+                    ),
+                    title: const Text("Help Center"),
+                    trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 20),
+
+              // 🚪 Logout button
+              ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: primaryColor,
+
+                  foregroundColor: primaryColor,
+                  minimumSize: const Size.fromHeight(50), // full width
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                icon: const Icon(Icons.logout_rounded, color: Colors.white),
+                label: const Text(
+                  "Logout",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+                onPressed: () {
+                  // TODO: add logout logic
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(const SnackBar(content: Text("Logged out")));
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
