@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:val_graphics_mobile_app/screens/login_screen.dart';
+import 'package:val_graphics_mobile_app/widgets/circular_progress_indicator.dart';
 
 import '../api/auth_api.dart';
 import '../db/constants.dart';
@@ -17,6 +18,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final _mobileController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+  bool _isLoading = false;
 
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
@@ -42,6 +44,10 @@ class _SignupScreenState extends State<SignupScreen> {
       ).showSnackBar(const SnackBar(content: Text("Passwords do not match")));
       return;
     }
+
+    setState(() {
+      _isLoading = true;
+    });
 
     try {
       ScaffoldMessenger.of(
@@ -71,6 +77,10 @@ class _SignupScreenState extends State<SignupScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Failed to connect to server")),
       );
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
     }
   }
 
@@ -256,14 +266,16 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                     ),
                     onPressed: _handleRegister,
-                    child: Text(
-                      "Register",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: primaryColor,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                    child: _isLoading
+                        ? SizedBox(width: 20, height: 20, child: Loader())
+                        : Text(
+                            "Register",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: primaryColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                   ),
                 ),
                 const SizedBox(height: 20),

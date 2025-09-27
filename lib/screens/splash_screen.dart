@@ -32,10 +32,10 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   Future<void> _checkUserData() async {
-    user = await StorageUtil.getUser() ?? {};
+    currentUser = await StorageUtil.getUser() ?? {};
 
     print('user ::::::::::::::::::::::::::::::::');
-    print(user);
+    print(currentUser);
 
     await Future.delayed(const Duration(seconds: 2)); // splash delay
 

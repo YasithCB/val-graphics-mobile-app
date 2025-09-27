@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:val_graphics_mobile_app/screens/home_screen.dart';
 import 'package:val_graphics_mobile_app/screens/signup_screen.dart';
+import 'package:val_graphics_mobile_app/widgets/circular_progress_indicator.dart';
 
 import '../api/auth_api.dart';
 import '../db/constants.dart';
@@ -17,6 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   bool _obscurePassword = true;
+  bool _isLoading = false;
 
   Future<void> _handleLogin() async {
     final email = _emailController.text.trim();
@@ -27,6 +29,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
       return;
     }
+
+    setState(() {
+      _isLoading = true;
+    });
 
     try {
       SnackBarUtil.show(context, "Logging in...");
@@ -49,6 +55,10 @@ class _LoginScreenState extends State<LoginScreen> {
     } catch (e) {
       print("Error: $e");
       SnackBarUtil.show(context, 'Failed to connect to server');
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
     }
   }
 
@@ -166,21 +176,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      padding: EdgeInsets.symmetric(vertical: 16),
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14),
                       ),
                     ),
                     onPressed: _handleLogin,
-                    child: Text(
-                      "Login",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: primaryColor,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                    child: _isLoading
+                        ? SizedBox(width: 20, height: 20, child: Loader())
+                        : Text(
+                            "Login",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: primaryColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                   ),
                 ),
 

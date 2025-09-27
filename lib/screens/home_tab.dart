@@ -35,7 +35,7 @@ class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
     print('user :::::::::::::');
-    print(user);
+    print(currentUser);
 
     return SafeArea(
       child: Padding(
@@ -65,14 +65,14 @@ class _HomeTabState extends State<HomeTab> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            user['username'] ?? "Hello, Guest!",
+                            currentUser['username'] ?? "Hello, Guest!",
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           Text(
-                            user['email'] ??
+                            currentUser['email'] ??
                                 "Log in now for a better experience",
                             style: const TextStyle(
                               fontSize: 12,

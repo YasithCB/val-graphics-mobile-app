@@ -9,5 +9,5 @@ double deviceHeight = 0;
 
 const String baseUrl = "http://192.168.100.120:5000";
 
-Map<String, dynamic> user = {};
-String token = '';
+Map<String, dynamic> currentUser = {};
+String currentUserToken = '';

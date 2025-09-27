@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:val_graphics_mobile_app/screens/login_screen.dart';
+import 'package:val_graphics_mobile_app/screens/profile/about_us.dart';
+import 'package:val_graphics_mobile_app/screens/profile/edit_profile.dart';
 import 'package:val_graphics_mobile_app/util/storage_util.dart';
 
 import '../db/constants.dart';
 import '../util/snackbar_util.dart';
+import '../util/util.dart';
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
@@ -19,9 +22,12 @@ class _ProfileTabState extends State<ProfileTab> {
     const Color optionIconBackgroundColor = Colors.black12;
 
     Future<void> handleLogout(BuildContext context) async {
+      final confirmed = await confirmAction(context, "Confirm Logout", "");
+      if (!confirmed) return; // ❌ Stop if not confirmed
+
       await StorageUtil.clear();
       // clear local var
-      user = {};
+      currentUser = {};
 
       print("🚪 Logged out");
       SnackBarUtil.show(context, "Logged out");
@@ -67,14 +73,15 @@ class _ProfileTabState extends State<ProfileTab> {
                       ),
                       SizedBox(height: 12),
                       Text(
-                        user['username'] ?? 'Hello, Guest!',
+                        currentUser['username'] ?? 'Hello, Guest!',
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        user['email'] ?? 'Log in now for a better experience',
+                        currentUser['email'] ??
+                            'Log in now for a better experience',
                         style: TextStyle(fontSize: 14, color: Colors.grey),
                       ),
                     ],
@@ -89,8 +96,16 @@ class _ProfileTabState extends State<ProfileTab> {
               // 📋 Options
               Column(
                 children: [
-                  if (user.isNotEmpty)
+                  if (currentUser.isNotEmpty)
                     ListTile(
+                      onTap: () => {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EditProfileScreen(),
+                          ),
+                        ),
+                      },
                       leading: Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
@@ -123,6 +138,10 @@ class _ProfileTabState extends State<ProfileTab> {
                     trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                   ),
                   ListTile(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AboutUsScreen()),
+                    ),
                     leading: Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
@@ -167,11 +186,13 @@ class _ProfileTabState extends State<ProfileTab> {
                   ),
                 ),
                 icon: Icon(
-                  user.isEmpty ? Icons.login_outlined : Icons.logout_rounded,
+                  currentUser.isEmpty
+                      ? Icons.login_outlined
+                      : Icons.logout_rounded,
                   color: Colors.white,
                 ),
                 label: Text(
-                  user.isEmpty ? 'Login Now' : "Logout",
+                  currentUser.isEmpty ? 'Login Now' : "Logout",
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -179,7 +200,7 @@ class _ProfileTabState extends State<ProfileTab> {
                   ),
                 ),
                 onPressed: () =>
-                    user.isEmpty ? handleLogin() : handleLogout(context),
+                    currentUser.isEmpty ? handleLogin() : handleLogout(context),
               ),
             ],
           ),

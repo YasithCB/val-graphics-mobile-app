@@ -82,8 +82,8 @@ class AuthApi {
 
       // save user data
       if (data["success"] == true) {
-        user = data["user"];
-        token = data["token"];
+        currentUser = data["user"];
+        currentUserToken = data["token"];
 
         await StorageUtil.saveToken(data["token"]);
         await StorageUtil.saveUser(data["user"]);
@@ -99,6 +99,51 @@ class AuthApi {
     } catch (e) {
       print("🚨 [LOGIN ERROR] $e");
       return {"success": false, "message": "Something went wrong: $e"};
+    }
+  }
+
+  static Future<Map<String, dynamic>> updateProfile({
+    required String token,
+    required String name,
+    required String email,
+    required String mobile,
+  }) async {
+    final url = Uri.parse("$baseUrl/update-profile");
+
+    print("📡 [UPDATE PROFILE] Sending request to: $url");
+    print(
+      "➡️ [REQUEST HEADERS] {Content-Type: application/json, Authorization: Bearer $token...}",
+    );
+    print("➡️ [REQUEST BODY] {name: $name, email: $email, mobile: $mobile}");
+
+    try {
+      final response = await http.put(
+        url,
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer $token",
+        },
+        body: jsonEncode({
+          "name": name,
+          "email": email,
+          "mobile": mobile,
+          'id': currentUser['_id'],
+        }),
+      );
+
+      print("⬅️ [RESPONSE STATUS] ${response.statusCode}");
+      print("⬅️ [RESPONSE BODY] ${response.body}");
+
+      final data = jsonDecode(response.body);
+      if (response.statusCode == 200) {
+        print("✅ [PARSED RESPONSE] $data");
+        return data;
+      } else {
+        return {"success": false, "message": data['message']};
+      }
+    } catch (e) {
+      print("🚨 [UPDATE PROFILE ERROR] $e");
+      return {"success": false, "message": "⚠️ Network error: $e"};
     }
   }
 }
