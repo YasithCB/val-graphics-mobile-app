@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:val_graphics_mobile_app/screens/service_details_screen.dart';
 
 import '../models/service_model.dart';
+import '../util/navigation_util.dart';
 
 class ServiceCard extends StatelessWidget {
   final ServiceModel service;
@@ -13,12 +14,7 @@ class ServiceCard extends StatelessWidget {
     return InkWell(
       onTap: () {
         // 🔹 Navigate to Service Details
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ServiceDetailsScreen(service: service),
-          ),
-        );
+        NavigationUtil.push(context, ServiceDetailsScreen(service: service));
       },
       borderRadius: BorderRadius.circular(16),
       child: Container(

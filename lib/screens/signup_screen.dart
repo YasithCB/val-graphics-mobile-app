@@ -4,6 +4,7 @@ import 'package:val_graphics_mobile_app/widgets/circular_progress_indicator.dart
 
 import '../api/auth_api.dart';
 import '../db/constants.dart';
+import '../util/navigation_util.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -67,10 +68,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
       if (result["success"] == true) {
         // go back to login only if successful
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => LoginScreen()),
-        );
+        NavigationUtil.pushReplacement(context, LoginScreen());
       }
     } catch (e) {
       print("Error: $e");
@@ -293,11 +291,9 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushReplacement(
+                          NavigationUtil.pushReplacement(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => LoginScreen(),
-                            ),
+                            LoginScreen(),
                           );
                         },
                         child: const Text(

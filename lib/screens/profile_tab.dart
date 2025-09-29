@@ -5,6 +5,7 @@ import 'package:val_graphics_mobile_app/screens/profile/edit_profile.dart';
 import 'package:val_graphics_mobile_app/util/storage_util.dart';
 
 import '../db/constants.dart';
+import '../util/navigation_util.dart';
 import '../util/snackbar_util.dart';
 import '../util/util.dart';
 
@@ -29,19 +30,11 @@ class _ProfileTabState extends State<ProfileTab> {
       print("🚪 Logged out");
       SnackBarUtil.show(context, "Logged out");
 
-      Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (context) => const LoginScreen()),
-        (route) => false, // remove all previous routes
-      );
+      NavigationUtil.pushAndRemoveUntil(context, LoginScreen());
     }
 
     handleLogin() {
-      Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (context) => const LoginScreen()),
-        (route) => false,
-      );
+      NavigationUtil.pushAndRemoveUntil(context, LoginScreen());
     }
 
     return SafeArea(
@@ -96,12 +89,7 @@ class _ProfileTabState extends State<ProfileTab> {
                   if (currentUser.isNotEmpty)
                     ListTile(
                       onTap: () => {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => EditProfileScreen(),
-                          ),
-                        ),
+                        NavigationUtil.push(context, EditProfileScreen()),
                       },
                       leading: Container(
                         padding: const EdgeInsets.all(10),
@@ -135,9 +123,9 @@ class _ProfileTabState extends State<ProfileTab> {
                     trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                   ),
                   ListTile(
-                    onTap: () => Navigator.push(
+                    onTap: () => NavigationUtil.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => AboutUsScreen()),
+                      AboutUsScreen(),
                     ),
                     leading: Container(
                       padding: const EdgeInsets.all(10),

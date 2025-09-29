@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:val_graphics_mobile_app/db/services_data.dart';
+import 'package:val_graphics_mobile_app/util/navigation_util.dart';
 
 import '../../screens/sub_service_details_screen.dart';
 
@@ -22,11 +23,9 @@ class HorizontalImageGrid extends StatelessWidget {
           return InkWell(
             onTap: () {
               // 🔹 Navigate to Service Details
-              Navigator.push(
+              NavigationUtil.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => SubServiceDetailsScreen(service: item),
-                ),
+                SubServiceDetailsScreen(service: item),
               );
             },
             child: Column(

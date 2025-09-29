@@ -5,6 +5,7 @@ import 'package:val_graphics_mobile_app/util/snackbar_util.dart';
 import 'package:val_graphics_mobile_app/util/storage_util.dart';
 
 import '../../db/constants.dart';
+import '../../util/navigation_util.dart';
 import '../../util/util.dart';
 
 class EditProfileScreen extends StatefulWidget {
@@ -54,10 +55,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         currentUser = result['user'];
         StorageUtil.saveUser(result['user']);
 
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => HomeScreen()),
-        );
+        NavigationUtil.pushReplacement(context, HomeScreen());
       }
 
       SnackBarUtil.show(context, result["message"] ?? "Something went wrong");

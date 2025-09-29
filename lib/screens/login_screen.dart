@@ -5,6 +5,7 @@ import 'package:val_graphics_mobile_app/widgets/circular_progress_indicator.dart
 
 import '../api/auth_api.dart';
 import '../db/constants.dart';
+import '../util/navigation_util.dart';
 import '../util/snackbar_util.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -47,10 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
         print("👤 User: ${result["user"]}");
 
         // Navigate to home screen
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => HomeScreen()),
-        );
+        NavigationUtil.pushReplacement(context, HomeScreen());
       }
     } catch (e) {
       print("Error: $e");
@@ -212,11 +210,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       GestureDetector(
                         onTap: () {
                           //  navigate to register
-                          Navigator.pushReplacement(
+                          NavigationUtil.pushReplacement(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => SignupScreen(),
-                            ),
+                            SignupScreen(),
                           );
                         },
                         child: const Text(
@@ -233,13 +229,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   // 👇 Continue as Guest button
                   TextButton(
                     onPressed: () {
-                      Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
-                        ),
-                        (route) => false,
-                      );
+                      NavigationUtil.pushAndRemoveUntil(context, HomeScreen());
                     },
                     child: const Text(
                       "OR CONTINUE AS GUEST",

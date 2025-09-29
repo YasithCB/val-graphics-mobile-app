@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:val_graphics_mobile_app/db/constants.dart';
+import 'package:val_graphics_mobile_app/util/navigation_util.dart';
 import 'package:val_graphics_mobile_app/util/storage_util.dart';
 
 import 'home_screen.dart';
@@ -39,10 +40,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     await Future.delayed(const Duration(seconds: 2)); // splash delay
 
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (_) => HomeScreen()),
-    );
+    NavigationUtil.pushReplacement(context, HomeScreen());
   }
 
   @override

@@ -5,6 +5,7 @@ import 'package:val_graphics_mobile_app/db/services_data.dart';
 import 'package:val_graphics_mobile_app/screens/notification_screen.dart';
 import 'package:val_graphics_mobile_app/screens/service_details_screen.dart';
 import 'package:val_graphics_mobile_app/screens/view_all_services_screen.dart';
+import 'package:val_graphics_mobile_app/util/navigation_util.dart';
 
 import '../widgets/home/horizontal-image-slider.dart';
 
@@ -35,7 +36,7 @@ class _HomeTabState extends State<HomeTab> {
 
   @override
   Widget build(BuildContext context) {
-    print('user :::::::::::::');
+    print('CURRENT USER :::::::::::::');
     print(currentUser);
 
     return SafeArea(
@@ -88,12 +89,7 @@ class _HomeTabState extends State<HomeTab> {
                   // Notification icon always on the right
                   IconButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => NotificationScreen(),
-                        ),
-                      );
+                      NavigationUtil.push(context, NotificationScreen());
                     },
                     icon: const Icon(Icons.notifications_none, size: 28),
                   ),
@@ -168,12 +164,9 @@ class _HomeTabState extends State<HomeTab> {
                         InkWell(
                           onTap: () {
                             // 🔹 Navigate to Service Details
-                            Navigator.push(
+                            NavigationUtil.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    ServiceDetailsScreen(service: service),
-                              ),
+                              ServiceDetailsScreen(service: service),
                             );
                           },
                           child: Container(
@@ -216,12 +209,7 @@ class _HomeTabState extends State<HomeTab> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ViewAllServices(),
-                        ),
-                      );
+                      NavigationUtil.push(context, ViewAllServices());
                     },
                     child: Text(
                       "View all",
