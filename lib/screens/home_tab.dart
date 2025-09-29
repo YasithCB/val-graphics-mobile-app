@@ -4,6 +4,7 @@ import 'package:val_graphics_mobile_app/db/constants.dart';
 import 'package:val_graphics_mobile_app/db/services_data.dart';
 import 'package:val_graphics_mobile_app/screens/notification_screen.dart';
 import 'package:val_graphics_mobile_app/screens/service_details_screen.dart';
+import 'package:val_graphics_mobile_app/screens/view_all_services_screen.dart';
 
 import '../widgets/home/horizontal-image-slider.dart';
 
@@ -215,7 +216,12 @@ class _HomeTabState extends State<HomeTab> {
                   ),
                   InkWell(
                     onTap: () {
-                      // todo 🔹 Switch tab here
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ViewAllServices(),
+                        ),
+                      );
                     },
                     child: Text(
                       "View all",

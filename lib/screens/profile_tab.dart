@@ -18,9 +18,6 @@ class ProfileTab extends StatefulWidget {
 class _ProfileTabState extends State<ProfileTab> {
   @override
   Widget build(BuildContext context) {
-    const Color optionIconColor = Colors.black;
-    const Color optionIconBackgroundColor = Colors.black12;
-
     Future<void> handleLogout(BuildContext context) async {
       final confirmed = await confirmAction(context, "Confirm Logout", "");
       if (!confirmed) return; // ❌ Stop if not confirmed
@@ -110,11 +107,11 @@ class _ProfileTabState extends State<ProfileTab> {
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: optionIconBackgroundColor,
+                          color: primaryColor5,
                         ),
                         child: Icon(
                           Icons.edit,
-                          color: optionIconColor,
+                          color: primaryColorHover,
                           size: 20,
                         ),
                       ),
@@ -126,11 +123,11 @@ class _ProfileTabState extends State<ProfileTab> {
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: optionIconBackgroundColor,
+                        color: primaryColor5,
                       ),
                       child: Icon(
                         Icons.settings,
-                        color: optionIconColor,
+                        color: primaryColorHover,
                         size: 20,
                       ),
                     ),
@@ -146,9 +143,13 @@ class _ProfileTabState extends State<ProfileTab> {
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: optionIconBackgroundColor,
+                        color: primaryColor5,
                       ),
-                      child: Icon(Icons.info, color: optionIconColor, size: 20),
+                      child: Icon(
+                        Icons.info,
+                        color: primaryColorHover,
+                        size: 20,
+                      ),
                     ),
                     title: const Text("About Us"),
                     trailing: const Icon(Icons.arrow_forward_ios, size: 16),
@@ -158,11 +159,11 @@ class _ProfileTabState extends State<ProfileTab> {
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: optionIconBackgroundColor,
+                        color: primaryColor5,
                       ),
                       child: Icon(
                         Icons.help_center,
-                        color: optionIconColor,
+                        color: primaryColorHover,
                         size: 20,
                       ),
                     ),

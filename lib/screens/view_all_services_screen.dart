@@ -5,14 +5,14 @@ import 'package:val_graphics_mobile_app/widgets/sub_service_card.dart';
 
 import '../db/constants.dart';
 
-class ExploreTab extends StatefulWidget {
-  const ExploreTab({super.key});
+class ViewAllServices extends StatefulWidget {
+  const ViewAllServices({super.key});
 
   @override
-  State<ExploreTab> createState() => _ExploreTabState();
+  State<ViewAllServices> createState() => _ViewAllServicesState();
 }
 
-class _ExploreTabState extends State<ExploreTab> {
+class _ViewAllServicesState extends State<ViewAllServices> {
   final TextEditingController _controller = TextEditingController();
 
   List<SubServiceModel> _results = [];
@@ -38,6 +38,15 @@ class _ExploreTabState extends State<ExploreTab> {
         : _results;
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Services',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+        ),
+        centerTitle: true,
+        backgroundColor: primaryColor,
+        foregroundColor: Colors.white,
+      ),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: GestureDetector(
@@ -118,16 +127,14 @@ class _ExploreTabState extends State<ExploreTab> {
                     ),
                     children: [
                       TextSpan(
-                        text: _controller.text.isEmpty ? "Popular " : "Search ",
+                        text: _controller.text.isEmpty ? "All " : "Search ",
                         style: TextStyle(
                           color:
                               primaryColor, // 🔹 only "Explore" in primary color
                         ),
                       ),
                       TextSpan(
-                        text: _controller.text.isEmpty
-                            ? "services these days"
-                            : "results",
+                        text: _controller.text.isEmpty ? "services" : "results",
                       ),
                     ],
                   ),

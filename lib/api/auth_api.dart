@@ -114,7 +114,9 @@ class AuthApi {
     print(
       "➡️ [REQUEST HEADERS] {Content-Type: application/json, Authorization: Bearer $token...}",
     );
-    print("➡️ [REQUEST BODY] {name: $name, email: $email, mobile: $mobile}");
+    print(
+      "➡️ [REQUEST BODY] {name: $name, email: $email, mobile: $mobile, id: ${currentUser['id']}",
+    );
 
     try {
       final response = await http.put(
@@ -127,7 +129,7 @@ class AuthApi {
           "name": name,
           "email": email,
           "mobile": mobile,
-          'id': currentUser['_id'],
+          'id': currentUser['id'],
         }),
       );
 
