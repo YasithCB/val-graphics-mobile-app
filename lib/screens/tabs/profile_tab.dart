@@ -123,10 +123,7 @@ class _ProfileTabState extends State<ProfileTab> {
                     trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                   ),
                   ListTile(
-                    onTap: () => NavigationUtil.pushAndRemoveUntil(
-                      context,
-                      AboutUsScreen(),
-                    ),
+                    onTap: () => NavigationUtil.push(context, AboutUsScreen()),
                     leading: Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(

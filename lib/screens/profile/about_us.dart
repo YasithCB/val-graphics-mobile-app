@@ -23,8 +23,8 @@ class AboutUsScreen extends StatelessWidget {
 
               // Logo
               Image.asset(
-                "assets/logo.webp",
-                height: 100, // adjust size
+                "assets/logo-portrait.webp",
+                height: 120, // adjust size
               ),
 
               const SizedBox(height: 16),
@@ -67,7 +67,7 @@ class AboutUsScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Card(
-                      color: Colors.white70,
+                      color: primaryColor,
                       elevation: 2,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
@@ -76,19 +76,21 @@ class AboutUsScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(16),
                         child: Column(
                           children: [
-                            Icon(Icons.flag, size: 40, color: primaryColor),
+                            Icon(Icons.flag, size: 40, color: Colors.white),
                             SizedBox(height: 8),
                             Text(
                               "Our Mission",
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
+                                color: Colors.white,
                               ),
                             ),
                             SizedBox(height: 6),
                             Text(
                               "To empower brands with creative solutions that inspire and connect with people.",
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ],
                         ),
@@ -98,7 +100,7 @@ class AboutUsScreen extends StatelessWidget {
                   const SizedBox(width: 16),
                   Expanded(
                     child: Card(
-                      color: Colors.white70,
+                      color: primaryColor,
                       elevation: 2,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
@@ -110,7 +112,7 @@ class AboutUsScreen extends StatelessWidget {
                             Icon(
                               Icons.visibility,
                               size: 40,
-                              color: primaryColor,
+                              color: Colors.white,
                             ),
                             SizedBox(height: 8),
                             Text(
@@ -118,12 +120,14 @@ class AboutUsScreen extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
+                                color: Colors.white,
                               ),
                             ),
                             SizedBox(height: 6),
                             Text(
                               "To be the go-to creative partner across the UAE for branding and design solutions.",
                               textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
                             ),
                           ],
                         ),
@@ -135,29 +139,39 @@ class AboutUsScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               // Contact Section
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                elevation: 4,
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                      Icon(Icons.contact_mail, size: 40, color: primaryColor),
-                      SizedBox(height: 12),
-                      Text(
-                        "Get in Touch",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+              SizedBox(
+                width: double.infinity, // ✅ make full width
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  elevation: 4,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.contact_page_outlined,
+                          size: 40,
+                          color: primaryColor,
                         ),
-                      ),
-                      SizedBox(height: 8),
-                      Text("📍 Abu Dhabi, United Arab Emirates"),
-                      Text("📞 +971 502 30 31 30"),
-                      Text("📧 info@valgraphics.com"),
-                    ],
+                        const SizedBox(height: 12),
+                        const Text(
+                          "Get in Touch",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        const Text("📍 Abu Dhabi, United Arab Emirates"),
+                        const SizedBox(height: 8),
+                        const Text("📞 +971 502 30 31 30"),
+                        const SizedBox(height: 8),
+                        const Text("📧 info@valgraphics.com"),
+                      ],
+                    ),
                   ),
                 ),
               ),
