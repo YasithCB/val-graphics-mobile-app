@@ -1,0 +1,33 @@
+{
+  "@section": "auth ------------------------------------------------",
+  "welcomeBack": "مرحبًا بعودتك",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "forgotPassword": "نسيت كلمة المرور؟",
+  "login": "تسجيل الدخول",
+  "dontHaveAccount": "ليس لديك حساب؟ ",
+  "signUp": "إنشاء حساب",
+  "orContinueAsGuest": "أو تابع كضيف",
+  "letsGet": "لنبدأ معك!",
+  "fName": "الاسم الكامل",
+  "mobileNumber": "رقم الهاتف",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "alreadyHaveAnAcc": "هل لديك حساب بالفعل؟ ",
+
+  "@section2": "home ------------------------------------------------",
+  "helloGuest": "مرحبًا، أيها الضيف!",
+  "logInNowForBestEx": "سجّل الدخول الآن للحصول على تجربة أفضل",
+  "specialOffers": "عروض خاصة",
+  "categories": "الفئات",
+  "popularServices": "الخدمات الشعبية",
+  "viewAll": "عرض الكل",
+
+  "@section3": "profile ------------------------------------------------",
+  "editProfile": "تعديل الملف الشخصي",
+  "aboutUs": "معلومات عنا",
+  "language": "اللغة",
+  "contactSup": "الاتصال بالدعم",
+  "rateTheApp": "قيم التطبيق",
+  "loginNow": "تسجيل الدخول الآن",
+  "logout": "تسجيل الخروج"
+}

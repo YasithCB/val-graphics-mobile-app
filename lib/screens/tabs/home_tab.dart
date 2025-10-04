@@ -7,6 +7,7 @@ import 'package:val_graphics_mobile_app/screens/service_details_screen.dart';
 import 'package:val_graphics_mobile_app/screens/view_all_services_screen.dart';
 import 'package:val_graphics_mobile_app/util/navigation_util.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../widgets/home/horizontal-image-slider.dart';
 
 class HomeTab extends StatefulWidget {
@@ -67,7 +68,8 @@ class _HomeTabState extends State<HomeTab> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            currentUser['username'] ?? "Hello, Guest!",
+                            currentUser['username'] ??
+                                AppLocalizations.of(context)!.helloGuest,
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -75,7 +77,7 @@ class _HomeTabState extends State<HomeTab> {
                           ),
                           Text(
                             currentUser['email'] ??
-                                "Log in now for a better experience",
+                                AppLocalizations.of(context)!.logInNowForBestEx,
                             style: const TextStyle(
                               fontSize: 12,
                               color: Colors.grey,
@@ -99,8 +101,8 @@ class _HomeTabState extends State<HomeTab> {
               const SizedBox(height: 24),
 
               // === Title: Special Offers ===
-              const Text(
-                "Special Offers",
+              Text(
+                AppLocalizations.of(context)!.specialOffers,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
               ),
 
@@ -146,8 +148,8 @@ class _HomeTabState extends State<HomeTab> {
               const SizedBox(height: 24),
 
               // === Categories title ===
-              const Text(
-                "Categories",
+              Text(
+                AppLocalizations.of(context)!.categories,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
 
@@ -204,7 +206,7 @@ class _HomeTabState extends State<HomeTab> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Popular Services",
+                    AppLocalizations.of(context)!.popularServices,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   InkWell(
@@ -212,7 +214,7 @@ class _HomeTabState extends State<HomeTab> {
                       NavigationUtil.push(context, ViewAllServices());
                     },
                     child: Text(
-                      "View all",
+                      AppLocalizations.of(context)!.viewAll,
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,

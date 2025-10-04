@@ -15,3 +15,6 @@ const String baseUrl = "http://192.168.100.120:5000";
 
 Map<String, dynamic> currentUser = {};
 String currentUserToken = '';
+
+// COMPANY DATA
+const String mobile = '+97126350660';

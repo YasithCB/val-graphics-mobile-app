@@ -3,9 +3,11 @@ import 'package:val_graphics_mobile_app/screens/auth/forgot_password.dart';
 import 'package:val_graphics_mobile_app/screens/auth/signup_screen.dart';
 import 'package:val_graphics_mobile_app/screens/home_screen.dart';
 import 'package:val_graphics_mobile_app/widgets/circular_progress_indicator.dart';
+import 'package:val_graphics_mobile_app/widgets/language_selector.dart';
 
 import '../../api/auth_api.dart';
 import '../../db/constants.dart';
+import '../../l10n/app_localizations.dart';
 import '../../util/navigation_util.dart';
 import '../../util/snackbar_util.dart';
 
@@ -88,9 +90,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 120, // adjust size
                   ),
                   const SizedBox(height: 16),
-                  const Text(
-                    "Welcome Back!",
-                    style: TextStyle(
+                  Text(
+                    AppLocalizations.of(context)!.welcomeBack,
+                    style: const TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -104,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      hintText: "Email",
+                      hintText: AppLocalizations.of(context)!.email,
                       prefixIcon: const Icon(
                         Icons.email_outlined,
                         color: Colors.black87,
@@ -128,7 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _passwordController,
                     obscureText: _obscurePassword,
                     decoration: InputDecoration(
-                      hintText: "Password",
+                      hintText: AppLocalizations.of(context)!.password,
                       prefixIcon: const Icon(
                         Icons.lock_outline_rounded,
                         color: Colors.black87,
@@ -170,9 +172,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           ForgotPasswordScreen(),
                         );
                       },
-                      child: const Text(
-                        "Forgot Password?",
-                        style: TextStyle(color: Colors.white),
+                      child: Text(
+                        AppLocalizations.of(context)!.forgotPassword,
+                        style: const TextStyle(color: Colors.white),
                       ),
                     ),
                   ),
@@ -193,7 +195,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: _isLoading
                           ? SizedBox(width: 20, height: 20, child: Loader())
                           : Text(
-                              "Login",
+                              AppLocalizations.of(context)!.login,
                               style: TextStyle(
                                 fontSize: 18,
                                 color: primaryColor,
@@ -209,9 +211,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        "Don’t have an account? ",
-                        style: TextStyle(color: Colors.white70),
+                      Text(
+                        AppLocalizations.of(context)!.dontHaveAccount,
+                        style: const TextStyle(color: Colors.white70),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -221,8 +223,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             SignupScreen(),
                           );
                         },
-                        child: const Text(
-                          "Sign Up",
+                        child: Text(
+                          AppLocalizations.of(context)!.signUp,
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -237,11 +239,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {
                       NavigationUtil.pushAndRemoveUntil(context, HomeScreen());
                     },
-                    child: const Text(
-                      "OR CONTINUE AS GUEST",
+                    child: Text(
+                      AppLocalizations.of(context)!.orContinueAsGuest,
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
+
+                  const SizedBox(height: 10),
+
+                  LanguageSelector(),
                 ],
               ),
             ),

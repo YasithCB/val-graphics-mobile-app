@@ -30,6 +30,10 @@ environment:
 dependencies:
   http: ^1.2.2   # or latest version
   shared_preferences: ^2.2.2
+  url_launcher: ^6.1.10
+  intl: 0.20.2
+  flutter_localizations:
+    sdk: flutter
 
   flutter:
     sdk: flutter
@@ -37,6 +41,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  intl_utils: ^2.8.12
 
 dev_dependencies:
   flutter_launcher_icons: ^0.10.0
@@ -61,6 +66,7 @@ flutter_icons:
 # The following section is specific to Flutter packages.
 flutter:
   uses-material-design: true
+  generate: true
 
   assets:
     - assets/logo-icon.webp

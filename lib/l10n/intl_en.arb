@@ -1,0 +1,34 @@
+{
+  "@section": "auth ------------------------------------------------",
+  "welcomeBack": "Welcome Back",
+  "email": "Email",
+  "password": "Password",
+  "forgotPassword": "Forgot Password?",
+  "login": "Login",
+  "dontHaveAccount": "Don't have an account? ",
+  "signUp": "Sign Up",
+  "orContinueAsGuest": "OR CONTINUE AS GUEST",
+  "letsGet": "Let’s Get You Started!",
+  "fName": "Full Name",
+  "mobileNumber": "Mobile Number",
+  "confirmPassword": "Confirm Password",
+  "alreadyHaveAnAcc": "Already have an account? ",
+
+  "@section2": "home ------------------------------------------------",
+  "helloGuest": "Hello, Guest!",
+  "logInNowForBestEx": "Log in now for a better experience",
+  "specialOffers": "Special Offers",
+  "categories": "Categories",
+  "popularServices": "Popular Services",
+  "viewAll": "View all",
+
+  "@section3": "profile ------------------------------------------------",
+  "editProfile": "Edit Profile",
+  "aboutUs": "About Us",
+  "language": "Language",
+  "contactSup": "Contact Support",
+  "rateTheApp": "Rate the app",
+  "loginNow": "Login Now",
+  "logout": "Logout"
+
+}

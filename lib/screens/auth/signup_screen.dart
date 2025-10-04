@@ -4,6 +4,7 @@ import 'package:val_graphics_mobile_app/widgets/circular_progress_indicator.dart
 
 import '../../api/auth_api.dart';
 import '../../db/constants.dart';
+import '../../l10n/app_localizations.dart';
 import '../../util/navigation_util.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -105,11 +106,11 @@ class _SignupScreenState extends State<SignupScreen> {
                 children: [
                   // Logo
                   Image.asset("assets/logo-text-white.webp", width: 200),
-                  const SizedBox(height: 16),
-                  const Text(
-                    "Let’s Get You Started",
+                  const SizedBox(height: 30),
+                  Text(
+                    AppLocalizations.of(context)!.letsGet,
                     style: TextStyle(
-                      fontSize: 26,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -120,7 +121,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   TextField(
                     controller: _nameController,
                     decoration: InputDecoration(
-                      hintText: "Full Name",
+                      hintText: AppLocalizations.of(context)!.fName,
                       prefixIcon: const Icon(
                         Icons.person_2_outlined,
                         color: Colors.black87,
@@ -144,7 +145,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      hintText: "Email",
+                      hintText: AppLocalizations.of(context)!.email,
                       prefixIcon: const Icon(
                         Icons.email_outlined,
                         color: Colors.black87,
@@ -168,7 +169,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     controller: _mobileController,
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
-                      hintText: "Mobile Number",
+                      hintText: AppLocalizations.of(context)!.mobileNumber,
                       prefixIcon: const Icon(
                         Icons.phone_android_outlined,
                         color: Colors.black87,
@@ -192,7 +193,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     controller: _passwordController,
                     obscureText: _obscurePassword,
                     decoration: InputDecoration(
-                      hintText: "Password",
+                      hintText: AppLocalizations.of(context)!.password,
                       prefixIcon: const Icon(Icons.lock, color: Colors.black87),
                       suffixIcon: IconButton(
                         icon: Icon(
@@ -226,7 +227,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     controller: _confirmPasswordController,
                     obscureText: _obscureConfirmPassword,
                     decoration: InputDecoration(
-                      hintText: "Confirm Password",
+                      hintText: AppLocalizations.of(context)!.confirmPassword,
                       prefixIcon: const Icon(Icons.lock_outline),
                       suffixIcon: IconButton(
                         icon: Icon(
@@ -270,7 +271,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       child: _isLoading
                           ? SizedBox(width: 20, height: 20, child: Loader())
                           : Text(
-                              "Register",
+                              AppLocalizations.of(context)!.signUp,
                               style: TextStyle(
                                 fontSize: 18,
                                 color: primaryColor,
@@ -285,8 +286,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        "Already have an account? ",
+                      Text(
+                        AppLocalizations.of(context)!.alreadyHaveAnAcc,
                         style: TextStyle(color: Colors.white70),
                       ),
                       GestureDetector(
@@ -296,8 +297,8 @@ class _SignupScreenState extends State<SignupScreen> {
                             LoginScreen(),
                           );
                         },
-                        child: const Text(
-                          "Login",
+                        child: Text(
+                          AppLocalizations.of(context)!.login,
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

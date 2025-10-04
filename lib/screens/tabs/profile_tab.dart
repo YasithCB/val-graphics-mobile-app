@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:val_graphics_mobile_app/screens/auth/login_screen.dart';
+import 'package:val_graphics_mobile_app/screens/language_settings_screen.dart';
 import 'package:val_graphics_mobile_app/screens/profile/about_us.dart';
 import 'package:val_graphics_mobile_app/screens/profile/edit_profile.dart';
 import 'package:val_graphics_mobile_app/util/storage_util.dart';
 
 import '../../db/constants.dart';
+import '../../l10n/app_localizations.dart';
 import '../../util/navigation_util.dart';
 import '../../util/snackbar_util.dart';
 import '../../util/util.dart';
@@ -37,6 +40,16 @@ class _ProfileTabState extends State<ProfileTab> {
       NavigationUtil.pushAndRemoveUntil(context, LoginScreen());
     }
 
+    Future<void> openCall() async {
+      final Uri url = Uri(scheme: 'tel', path: mobile);
+
+      if (await canLaunchUrl(url)) {
+        await launchUrl(url);
+      } else {
+        throw 'Could not launch $mobile';
+      }
+    }
+
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -63,7 +76,8 @@ class _ProfileTabState extends State<ProfileTab> {
                       ),
                       SizedBox(height: 12),
                       Text(
-                        currentUser['username'] ?? 'Hello, Guest!',
+                        currentUser['username'] ??
+                            AppLocalizations.of(context)!.helloGuest,
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -71,7 +85,7 @@ class _ProfileTabState extends State<ProfileTab> {
                       ),
                       Text(
                         currentUser['email'] ??
-                            'Log in now for a better experience',
+                            AppLocalizations.of(context)!.logInNowForBestEx,
                         style: TextStyle(fontSize: 14, color: Colors.grey),
                       ),
                     ],
@@ -103,25 +117,10 @@ class _ProfileTabState extends State<ProfileTab> {
                           size: 20,
                         ),
                       ),
-                      title: const Text("Edit Profile"),
+                      title: Text(AppLocalizations.of(context)!.editProfile),
                       trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                     ),
-                  ListTile(
-                    leading: Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: primaryColor5,
-                      ),
-                      child: Icon(
-                        Icons.settings,
-                        color: primaryColorHover,
-                        size: 20,
-                      ),
-                    ),
-                    title: const Text("Settings"),
-                    trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                  ),
+
                   ListTile(
                     onTap: () => NavigationUtil.push(context, AboutUsScreen()),
                     leading: Container(
@@ -131,12 +130,48 @@ class _ProfileTabState extends State<ProfileTab> {
                         color: primaryColor5,
                       ),
                       child: Icon(
-                        Icons.info,
+                        Icons.info_outline,
                         color: primaryColorHover,
                         size: 20,
                       ),
                     ),
-                    title: const Text("About Us"),
+                    title: Text(AppLocalizations.of(context)!.aboutUs),
+                    trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      NavigationUtil.push(context, LanguageSettingsScreen());
+                    },
+                    leading: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: primaryColor5,
+                      ),
+                      child: Icon(
+                        Icons.language,
+                        color: primaryColorHover,
+                        size: 20,
+                      ),
+                    ),
+                    title: Text(AppLocalizations.of(context)!.language),
+                    trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  ),
+                  ListTile(
+                    onTap: openCall,
+                    leading: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: primaryColor5,
+                      ),
+                      child: Icon(
+                        Icons.call_outlined,
+                        color: primaryColorHover,
+                        size: 20,
+                      ),
+                    ),
+                    title: Text(AppLocalizations.of(context)!.contactSup),
                     trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                   ),
                   ListTile(
@@ -147,12 +182,12 @@ class _ProfileTabState extends State<ProfileTab> {
                         color: primaryColor5,
                       ),
                       child: Icon(
-                        Icons.help_center,
+                        Icons.star_rate_outlined,
                         color: primaryColorHover,
                         size: 20,
                       ),
                     ),
-                    title: const Text("Help Center"),
+                    title: Text(AppLocalizations.of(context)!.rateTheApp),
                     trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                   ),
                 ],
@@ -178,7 +213,9 @@ class _ProfileTabState extends State<ProfileTab> {
                   color: Colors.white,
                 ),
                 label: Text(
-                  currentUser.isEmpty ? 'Login Now' : "Logout",
+                  currentUser.isEmpty
+                      ? AppLocalizations.of(context)!.loginNow
+                      : AppLocalizations.of(context)!.logout,
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
