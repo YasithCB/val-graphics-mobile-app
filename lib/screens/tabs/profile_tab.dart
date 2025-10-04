@@ -4,10 +4,10 @@ import 'package:val_graphics_mobile_app/screens/profile/about_us.dart';
 import 'package:val_graphics_mobile_app/screens/profile/edit_profile.dart';
 import 'package:val_graphics_mobile_app/util/storage_util.dart';
 
-import '../db/constants.dart';
-import '../util/navigation_util.dart';
-import '../util/snackbar_util.dart';
-import '../util/util.dart';
+import '../../db/constants.dart';
+import '../../util/navigation_util.dart';
+import '../../util/snackbar_util.dart';
+import '../../util/util.dart';
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});

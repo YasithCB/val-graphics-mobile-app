@@ -3,7 +3,7 @@ import 'package:val_graphics_mobile_app/db/services_data.dart';
 import 'package:val_graphics_mobile_app/models/service_model.dart';
 import 'package:val_graphics_mobile_app/widgets/sub_service_card.dart';
 
-import '../db/constants.dart';
+import '../../db/constants.dart';
 
 class ExploreTab extends StatefulWidget {
   const ExploreTab({super.key});
@@ -111,10 +111,10 @@ class _ExploreTabState extends State<ExploreTab> {
                 // 🔹 Section Title
                 RichText(
                   text: TextSpan(
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black, // default color for rest
+                      color: primaryColor2, // default color for rest
                     ),
                     children: [
                       TextSpan(

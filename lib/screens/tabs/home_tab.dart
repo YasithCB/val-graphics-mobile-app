@@ -7,7 +7,7 @@ import 'package:val_graphics_mobile_app/screens/service_details_screen.dart';
 import 'package:val_graphics_mobile_app/screens/view_all_services_screen.dart';
 import 'package:val_graphics_mobile_app/util/navigation_util.dart';
 
-import '../widgets/home/horizontal-image-slider.dart';
+import '../../widgets/home/horizontal-image-slider.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});

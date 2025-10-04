@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:val_graphics_mobile_app/screens/explore_tab.dart';
-import 'package:val_graphics_mobile_app/screens/home_tab.dart';
-import 'package:val_graphics_mobile_app/screens/profile_tab.dart';
-import 'package:val_graphics_mobile_app/screens/tab4.dart';
+import 'package:val_graphics_mobile_app/screens/tabs/explore_tab.dart';
+import 'package:val_graphics_mobile_app/screens/tabs/home_tab.dart';
+import 'package:val_graphics_mobile_app/screens/tabs/order_tab.dart';
+import 'package:val_graphics_mobile_app/screens/tabs/profile_tab.dart';
 
 import '../db/constants.dart';
 import '../screens/services_screen.dart';
@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeTab(),
     ExploreTab(),
     ServicesScreen(),
-    TabFour(),
+    OrdersTab(),
     ProfileTab(),
   ];
 

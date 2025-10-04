@@ -12,7 +12,7 @@ class ServicesScreen extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          SizedBox(height: deviceHeight * 0.05),
+          SizedBox(height: deviceHeight * 0.035),
 
           // 🔹 Section Title
           RichText(
@@ -26,7 +26,7 @@ class ServicesScreen extends StatelessWidget {
                 TextSpan(
                   text: "Explore ",
                   style: TextStyle(
-                    color: primaryColor, // 🔹 only "Explore" in primary color
+                    color: primaryColor2, // 🔹 only "Explore" in primary color
                   ),
                 ),
                 const TextSpan(text: "Our Main Services"),

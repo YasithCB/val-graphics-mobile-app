@@ -100,7 +100,7 @@ class _ViewAllServicesState extends State<ViewAllServices> {
                     const SizedBox(width: 10),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFFE81564),
+                        backgroundColor: primaryColor2,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -120,10 +120,10 @@ class _ViewAllServicesState extends State<ViewAllServices> {
                 // 🔹 Section Title
                 RichText(
                   text: TextSpan(
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black, // default color for rest
+                      color: primaryColor2, // default color for rest
                     ),
                     children: [
                       TextSpan(
