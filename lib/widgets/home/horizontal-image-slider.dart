@@ -37,7 +37,7 @@ class HorizontalImageGrid extends StatelessWidget {
                     item.image,
                     fit: BoxFit.cover,
                     height: 100,
-                    width: 140,
+                    width: 150,
                   ),
                 ),
                 const SizedBox(height: 6),

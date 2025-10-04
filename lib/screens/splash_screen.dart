@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen>
   Future<void> _checkUserData() async {
     currentUser = await StorageUtil.getUser() ?? {};
 
-    print('user ::::::::::::::::::::::::::::::::');
+    print('::::::::::::::::::: USER :::::::::::::::::::');
     print(currentUser);
 
     await Future.delayed(const Duration(seconds: 2)); // splash delay
@@ -52,14 +52,14 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE81564),
+      backgroundColor: primaryColor,
       body: Center(
         child: FadeTransition(
           opacity: _fadeAnimation,
           child: SizedBox(
-            height: 80,
-            width: 80,
-            child: Image.asset("assets/logo-icon-white.webp"),
+            height: 160,
+            width: 160,
+            child: Image.asset("assets/logo-white.webp"),
           ),
         ),
       ),

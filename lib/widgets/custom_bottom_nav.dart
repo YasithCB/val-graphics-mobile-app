@@ -37,10 +37,7 @@ class CustomBottomNav extends StatelessWidget {
             height: centerIconSize,
             width: centerIconSize,
             child: Center(
-              child: Icon(
-                Icons.account_tree_outlined,
-                size: centerIconSize,
-              ),
+              child: Icon(Icons.account_tree_outlined, size: centerIconSize),
             ),
           ),
           label: 'Services',

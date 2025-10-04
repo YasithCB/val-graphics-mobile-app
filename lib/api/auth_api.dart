@@ -75,8 +75,8 @@ class AuthApi {
         body: jsonEncode(bodyData),
       );
 
-      print("⬅️ [RESPONSE STATUS] ${response.statusCode}");
-      print("⬅️ [RESPONSE BODY] ${response.body}");
+      print("⬅️ [RESPONSE STATUS loginUser] ${response.statusCode}");
+      print("⬅️ [RESPONSE BODY loginUser] ${response.body}");
 
       final Map<String, dynamic> data = jsonDecode(response.body);
 
@@ -147,5 +147,59 @@ class AuthApi {
       print("🚨 [UPDATE PROFILE ERROR] $e");
       return {"success": false, "message": "⚠️ Network error: $e"};
     }
+  }
+
+  // 🔹 Forgot Password
+  static Future<Map<String, dynamic>> forgotPassword({
+    required String email,
+  }) async {
+    final url = Uri.parse("$baseUrl/auth/forgot-password");
+
+    final response = await http.post(
+      url,
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({"email": email}),
+    );
+
+    print('Response : forgotPassword');
+    print(response.body);
+    return jsonDecode(response.body);
+  }
+
+  // 🔹 Verify OTP
+  static Future<Map<String, dynamic>> verifyOtp({
+    required String email,
+    required String otp,
+  }) async {
+    final url = Uri.parse("$baseUrl/auth/verify-otp");
+
+    final response = await http.post(
+      url,
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({"email": email, "otp": otp}),
+    );
+
+    print('Response : verifyOtp');
+    print(response.body);
+    return jsonDecode(response.body);
+  }
+
+  // 🔹 Reset Password
+  static Future<Map<String, dynamic>> resetPassword({
+    required String email,
+    required String otp,
+    required String password,
+  }) async {
+    final url = Uri.parse("$baseUrl/auth/reset-password");
+
+    final response = await http.post(
+      url,
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({"email": email, "otp": otp, "password": password}),
+    );
+
+    print('Response : resetPassword');
+    print(response.body);
+    return jsonDecode(response.body);
   }
 }

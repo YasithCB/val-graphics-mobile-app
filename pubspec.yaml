@@ -39,8 +39,14 @@ dependencies:
   cupertino_icons: ^1.0.8
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.10.0
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/app-icon.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -57,6 +63,13 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/logo-icon.webp
+    - assets/logo-landscape.webp
+    - assets/logo-portrait.webp
+    - assets/logo-text.webp
+    - assets/logo-white.webp
+    - assets/logo-text-white.webp
+
     - assets/images/interior.png
     - assets/images/marketing.jpg
     - assets/images/printing-services.png
@@ -113,9 +126,6 @@ flutter:
     - assets/images/sub-services/6.3.webp
     - assets/images/sub-services/6.4.webp
     - assets/images/sub-services/6.4.webp
-
-    - assets/logo-icon-white.webp
-    - assets/logo.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

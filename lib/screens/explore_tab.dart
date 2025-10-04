@@ -91,7 +91,7 @@ class _ExploreTabState extends State<ExploreTab> {
                     const SizedBox(width: 10),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFFE81564),
+                        backgroundColor: primaryColor2,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),

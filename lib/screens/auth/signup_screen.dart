@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:val_graphics_mobile_app/screens/login_screen.dart';
+import 'package:val_graphics_mobile_app/screens/auth/login_screen.dart';
 import 'package:val_graphics_mobile_app/widgets/circular_progress_indicator.dart';
 
-import '../api/auth_api.dart';
-import '../db/constants.dart';
-import '../util/navigation_util.dart';
+import '../../api/auth_api.dart';
+import '../../db/constants.dart';
+import '../../util/navigation_util.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -104,10 +104,10 @@ class _SignupScreenState extends State<SignupScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // Logo
-                  Image.asset("assets/logo-icon-white.webp", height: 90),
+                  Image.asset("assets/logo-text-white.webp", width: 200),
                   const SizedBox(height: 16),
                   const Text(
-                    "Create Account",
+                    "Let’s Get You Started",
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,

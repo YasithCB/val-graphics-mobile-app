@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:val_graphics_mobile_app/screens/auth/forgot_password.dart';
+import 'package:val_graphics_mobile_app/screens/auth/signup_screen.dart';
 import 'package:val_graphics_mobile_app/screens/home_screen.dart';
-import 'package:val_graphics_mobile_app/screens/signup_screen.dart';
 import 'package:val_graphics_mobile_app/widgets/circular_progress_indicator.dart';
 
-import '../api/auth_api.dart';
-import '../db/constants.dart';
-import '../util/navigation_util.dart';
-import '../util/snackbar_util.dart';
+import '../../api/auth_api.dart';
+import '../../db/constants.dart';
+import '../../util/navigation_util.dart';
+import '../../util/snackbar_util.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -83,8 +84,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   // Logo
                   Image.asset(
-                    "assets/logo-icon-white.webp",
-                    height: 100, // adjust size
+                    "assets/logo-white.webp",
+                    height: 120, // adjust size
                   ),
                   const SizedBox(height: 16),
                   const Text(
@@ -163,7 +164,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        NavigationUtil.pushReplacement(
+                          context,
+                          ForgotPasswordScreen(),
+                        );
+                      },
                       child: const Text(
                         "Forgot Password?",
                         style: TextStyle(color: Colors.white),

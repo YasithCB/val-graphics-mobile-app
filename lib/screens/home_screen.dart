@@ -37,13 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'VAL Graphics',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-        ),
+        title: Image.asset('assets/logo-text-white.webp', height: 30),
         centerTitle: true,
         backgroundColor: primaryColor,
-        foregroundColor: Colors.white,
       ),
       backgroundColor: Colors.white,
       body: IndexedStack(index: _currentIndex, children: _pages),

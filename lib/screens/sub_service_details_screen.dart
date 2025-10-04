@@ -37,7 +37,7 @@ class SubServiceDetailsScreen extends StatelessWidget {
             Text(
               service.name,
               style: TextStyle(
-                fontSize: 22,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: primaryColor,
               ),
@@ -45,14 +45,14 @@ class SubServiceDetailsScreen extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               service.desc,
-              style: TextStyle(fontSize: 16, color: Colors.grey.shade700),
+              style: TextStyle(fontSize: 13, color: Colors.grey.shade700),
             ),
             const SizedBox(height: 20),
 
             // 🔹 Subcategories Section
             Row(
-              children: const [
-                Icon(Icons.widgets, color: Color(0xFFE81564)),
+              children: [
+                Icon(Icons.widgets, color: primaryColor),
                 SizedBox(width: 8),
                 Text(
                   "Explore Variants",

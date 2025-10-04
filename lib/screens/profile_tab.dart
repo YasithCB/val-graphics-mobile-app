@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:val_graphics_mobile_app/screens/login_screen.dart';
+import 'package:val_graphics_mobile_app/screens/auth/login_screen.dart';
 import 'package:val_graphics_mobile_app/screens/profile/about_us.dart';
 import 'package:val_graphics_mobile_app/screens/profile/edit_profile.dart';
 import 'package:val_graphics_mobile_app/util/storage_util.dart';

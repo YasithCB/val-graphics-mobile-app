@@ -173,12 +173,12 @@ class _HomeTabState extends State<HomeTab> {
                             padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: primaryColor.withOpacity(0.10),
+                              color: primaryColor5,
                             ),
                             child: Icon(
                               serviceIcons[service.name] ?? Icons.category,
                               color: primaryColor,
-                              size: 28,
+                              size: 25,
                             ),
                           ),
                         ),
@@ -216,7 +216,7 @@ class _HomeTabState extends State<HomeTab> {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        color: Color(0xFFE81564),
+                        color: primaryColor,
                       ),
                     ),
                   ),
