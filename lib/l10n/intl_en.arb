@@ -13,6 +13,12 @@
   "mobileNumber": "Mobile Number",
   "confirmPassword": "Confirm Password",
   "alreadyHaveAnAcc": "Already have an account? ",
+  "forgotPasswordDesc": "Enter your email to reset your password",
+  "sendOtp": "Send OTP",
+  "enterOtp": "Enter OTP",
+  "newPassword": "New Password",
+  "resetPassword": "Reset Password",
+  "rememberYourPassword": "Remember your password? ",
 
   "@section2": "home ------------------------------------------------",
   "helloGuest": "Hello, Guest!",
@@ -29,6 +35,36 @@
   "contactSup": "Contact Support",
   "rateTheApp": "Rate the app",
   "loginNow": "Login Now",
-  "logout": "Logout"
+  "logout": "Logout",
 
+  "@section4": "navbar ------------------------------------------------",
+  "home": "Home",
+  "explore": "Explore",
+  "services": "Services",
+  "orders": "Orders",
+  "profile": "Profile",
+
+  "@section5": "orders ------------------------------------------------",
+  "nothingHereYet": "Nothing Here Yet",
+  "lookLikeYouHaventPlaced": "Looks like you haven’t placed any orders yet.\nStart exploring to find what you need!",
+  "exploreNow": "Explore Now",
+
+  "@section6": "aboutUs ------------------------------------------------",
+  "creativeSolutionsUnder": "Creative Solutions Under One Roof",
+  "weAreALeading": "We are a leading creative agency specializing in vehicle branding, digital printing, interior design, and signage. Our mission is to deliver innovative and high-quality solutions that help businesses stand out.",
+  "ourMission": "Our Mission",
+  "ourMissionDesc": "To empower brands with creative solutions that inspire and connect with people.",
+  "ourVision": "Our Vision",
+  "ourVisionDesc": "To be the go-to creative partner across the UAE for branding and design solutions.",
+  "getInTouch": "Get in Touch",
+  "addressDesc": "Abu Dhabi, United Arab Emirates",
+
+  "@section7": "exploreTab ------------------------------------------------",
+  "searchServices": "Search services...",
+  "popularServicesTheseDays": "Popular services these days",
+  "searchResults": "Search results",
+  "noResultsFound": "No results found",
+
+  "@section8": "servicesTab ------------------------------------------------",
+  "exploreOurMainServices": "Explore Our Main Services"
 }

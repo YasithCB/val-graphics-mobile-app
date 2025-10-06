@@ -48,6 +48,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get alreadyHaveAnAcc => 'Already have an account? ';
 
   @override
+  String get forgotPasswordDesc => 'Enter your email to reset your password';
+
+  @override
+  String get sendOtp => 'Send OTP';
+
+  @override
+  String get enterOtp => 'Enter OTP';
+
+  @override
+  String get newPassword => 'New Password';
+
+  @override
+  String get resetPassword => 'Reset Password';
+
+  @override
+  String get rememberYourPassword => 'Remember your password? ';
+
+  @override
   String get helloGuest => 'Hello, Guest!';
 
   @override
@@ -85,4 +103,71 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get logout => 'Logout';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get explore => 'Explore';
+
+  @override
+  String get services => 'Services';
+
+  @override
+  String get orders => 'Orders';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get nothingHereYet => 'Nothing Here Yet';
+
+  @override
+  String get lookLikeYouHaventPlaced =>
+      'Looks like you haven’t placed any orders yet.\nStart exploring to find what you need!';
+
+  @override
+  String get exploreNow => 'Explore Now';
+
+  @override
+  String get creativeSolutionsUnder => 'Creative Solutions Under One Roof';
+
+  @override
+  String get weAreALeading =>
+      'We are a leading creative agency specializing in vehicle branding, digital printing, interior design, and signage. Our mission is to deliver innovative and high-quality solutions that help businesses stand out.';
+
+  @override
+  String get ourMission => 'Our Mission';
+
+  @override
+  String get ourMissionDesc =>
+      'To empower brands with creative solutions that inspire and connect with people.';
+
+  @override
+  String get ourVision => 'Our Vision';
+
+  @override
+  String get ourVisionDesc =>
+      'To be the go-to creative partner across the UAE for branding and design solutions.';
+
+  @override
+  String get getInTouch => 'Get in Touch';
+
+  @override
+  String get addressDesc => 'Abu Dhabi, United Arab Emirates';
+
+  @override
+  String get searchServices => 'Search services...';
+
+  @override
+  String get popularServicesTheseDays => 'Popular services these days';
+
+  @override
+  String get searchResults => 'Search results';
+
+  @override
+  String get noResultsFound => 'No results found';
+
+  @override
+  String get exploreOurMainServices => 'Explore Our Main Services';
 }

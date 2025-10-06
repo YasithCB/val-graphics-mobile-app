@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:val_graphics_mobile_app/db/constants.dart';
 
+import '../../l10n/app_localizations.dart';
+
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
 
@@ -8,7 +10,7 @@ class AboutUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("About Us"),
+        title: Text(AppLocalizations.of(context)!.aboutUs),
         centerTitle: true,
         backgroundColor: primaryColor,
         foregroundColor: Colors.white,
@@ -29,8 +31,8 @@ class AboutUsScreen extends StatelessWidget {
 
               const SizedBox(height: 16),
 
-              const Text(
-                "Creative Solutions Under One Roof",
+              Text(
+                AppLocalizations.of(context)!.creativeSolutionsUnder,
                 style: TextStyle(fontSize: 16, color: Colors.black54),
                 textAlign: TextAlign.center,
               ),
@@ -49,10 +51,7 @@ class AboutUsScreen extends StatelessWidget {
                       Icon(Icons.info_outline, size: 40, color: primaryColor),
                       SizedBox(height: 12),
                       Text(
-                        "We are a leading creative agency specializing in "
-                        "vehicle branding, digital printing, interior design, and signage. "
-                        "Our mission is to deliver innovative and high-quality solutions "
-                        "that help businesses stand out.",
+                        AppLocalizations.of(context)!.weAreALeading,
                         style: TextStyle(fontSize: 16, height: 1.5),
                         textAlign: TextAlign.center,
                       ),
@@ -79,7 +78,7 @@ class AboutUsScreen extends StatelessWidget {
                             Icon(Icons.flag, size: 40, color: Colors.white),
                             SizedBox(height: 8),
                             Text(
-                              "Our Mission",
+                              AppLocalizations.of(context)!.ourMission,
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
@@ -88,7 +87,7 @@ class AboutUsScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 6),
                             Text(
-                              "To empower brands with creative solutions that inspire and connect with people.",
+                              AppLocalizations.of(context)!.ourMissionDesc,
                               textAlign: TextAlign.center,
                               style: TextStyle(color: Colors.white),
                             ),
@@ -116,7 +115,7 @@ class AboutUsScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 8),
                             Text(
-                              "Our Vision",
+                              AppLocalizations.of(context)!.ourVision,
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
@@ -125,7 +124,7 @@ class AboutUsScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 6),
                             Text(
-                              "To be the go-to creative partner across the UAE for branding and design solutions.",
+                              AppLocalizations.of(context)!.ourVisionDesc,
                               textAlign: TextAlign.center,
                               style: TextStyle(color: Colors.white),
                             ),
@@ -157,15 +156,15 @@ class AboutUsScreen extends StatelessWidget {
                           color: primaryColor,
                         ),
                         const SizedBox(height: 12),
-                        const Text(
-                          "Get in Touch",
+                        Text(
+                          AppLocalizations.of(context)!.getInTouch,
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         const SizedBox(height: 8),
-                        const Text("📍 Abu Dhabi, United Arab Emirates"),
+                        Text("📍 ${AppLocalizations.of(context)!.addressDesc}"),
                         const SizedBox(height: 8),
                         const Text("📞 +971 502 30 31 30"),
                         const SizedBox(height: 8),

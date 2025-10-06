@@ -6,7 +6,7 @@ import 'package:val_graphics_mobile_app/screens/tabs/profile_tab.dart';
 
 import '../db/constants.dart';
 import '../screens/services_screen.dart';
-import '../widgets/custom_bottom_nav.dart';
+import '../widgets/navbar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       backgroundColor: Colors.white,
       body: IndexedStack(index: _currentIndex, children: _pages),
-      bottomNavigationBar: CustomBottomNav(
+      bottomNavigationBar: Navbar(
         currentIndex: _currentIndex,
         onTabSelected: _onTabSelected,
       ),

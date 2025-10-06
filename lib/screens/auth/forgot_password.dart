@@ -3,6 +3,7 @@ import 'package:val_graphics_mobile_app/widgets/circular_progress_indicator.dart
 
 import '../../api/auth_api.dart';
 import '../../db/constants.dart';
+import '../../l10n/app_localizations.dart';
 import '../../util/navigation_util.dart';
 import '../../util/snackbar_util.dart';
 import 'login_screen.dart';
@@ -116,17 +117,17 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 children: [
                   Image.asset("assets/logo-white.webp", height: 110),
                   const SizedBox(height: 20),
-                  const Text(
-                    "Forgot Password?",
-                    style: TextStyle(
+                  Text(
+                    AppLocalizations.of(context)!.forgotPassword,
+                    style: const TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
                   const SizedBox(height: 8),
-                  const Text(
-                    "Enter your email to reset your password",
+                  Text(
+                    AppLocalizations.of(context)!.forgotPasswordDesc,
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.white70),
                   ),
@@ -138,7 +139,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
-                        hintText: "Email",
+                        hintText: AppLocalizations.of(context)!.email,
                         prefixIcon: const Icon(
                           Icons.email_outlined,
                           color: Colors.black87,
@@ -174,7 +175,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                 child: Loader(),
                               )
                             : Text(
-                                "Send OTP",
+                                AppLocalizations.of(context)!.sendOtp,
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: primaryColor,
@@ -191,7 +192,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       controller: _otpController,
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                        hintText: "Enter OTP",
+                        hintText: AppLocalizations.of(context)!.enterOtp,
                         prefixIcon: const Icon(
                           Icons.lock_outline_rounded,
                           color: Colors.black87,
@@ -213,7 +214,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       controller: _passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
-                        hintText: "New Password",
+                        hintText: AppLocalizations.of(context)!.newPassword,
                         prefixIcon: const Icon(
                           Icons.password_outlined,
                           color: Colors.black87,
@@ -251,7 +252,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                 child: Loader(),
                               )
                             : Text(
-                                "Reset Password",
+                                AppLocalizations.of(context)!.resetPassword,
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: primaryColor,
@@ -266,8 +267,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        "Remember your password? ",
+                      Text(
+                        AppLocalizations.of(context)!.rememberYourPassword,
                         style: TextStyle(color: Colors.white70),
                       ),
                       GestureDetector(
@@ -277,8 +278,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             const LoginScreen(),
                           );
                         },
-                        child: const Text(
-                          "Login",
+                        child: Text(
+                          AppLocalizations.of(context)!.login,
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

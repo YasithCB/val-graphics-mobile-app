@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomBottomNav extends StatelessWidget {
+import '../l10n/app_localizations.dart';
+
+class Navbar extends StatelessWidget {
   final int currentIndex;
   final ValueChanged<int> onTabSelected;
 
-  const CustomBottomNav({
+  const Navbar({
     super.key,
     required this.currentIndex,
     required this.onTabSelected,
@@ -25,11 +27,11 @@ class CustomBottomNav extends StatelessWidget {
       items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.home, size: normalIconSize),
-          label: 'Home',
+          label: AppLocalizations.of(context)!.home,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.search, size: normalIconSize),
-          label: 'Explore',
+          label: AppLocalizations.of(context)!.explore,
         ),
         BottomNavigationBarItem(
           // make center tab visually prominent
@@ -40,15 +42,15 @@ class CustomBottomNav extends StatelessWidget {
               child: Icon(Icons.account_tree_outlined, size: centerIconSize),
             ),
           ),
-          label: 'Services',
+          label: AppLocalizations.of(context)!.services,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.shopping_cart, size: normalIconSize),
-          label: 'Orders',
+          label: AppLocalizations.of(context)!.orders,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person, size: normalIconSize),
-          label: 'Profile',
+          label: AppLocalizations.of(context)!.profile,
         ),
       ],
     );

@@ -94,15 +94,16 @@ flutter:
     - assets/images/services/3.webp
     - assets/images/services/4.webp
     - assets/images/services/5.webp
+    - assets/images/services/6.webp
 
     - assets/images/sub-services/1.1.webp
     - assets/images/sub-services/1.2.webp
-    - assets/images/sub-services/1.3.webp
-    - assets/images/sub-services/1.4.webp
+    - assets/images/sub-services/6.1.webp
+    - assets/images/sub-services/6.2.webp
     - assets/images/sub-services/1.5.webp
     - assets/images/sub-services/1.6.webp
     - assets/images/sub-services/1.7.webp
-    - assets/images/sub-services/1.8.webp
+    - assets/images/sub-services/6.3.webp
     - assets/images/sub-services/2.1.webp
     - assets/images/sub-services/2.2.webp
     - assets/images/sub-services/2.3.webp
@@ -131,7 +132,9 @@ flutter:
     - assets/images/sub-services/6.2.webp
     - assets/images/sub-services/6.3.webp
     - assets/images/sub-services/6.4.webp
-    - assets/images/sub-services/6.4.webp
+    - assets/images/sub-services/ds-1.webp
+    - assets/images/sub-services/ds-2.webp
+    - assets/images/sub-services/ds-3.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

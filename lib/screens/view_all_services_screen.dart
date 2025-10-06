@@ -23,9 +23,9 @@ class _ViewAllServicesState extends State<ViewAllServices> {
       if (query.isEmpty) {
         _results.clear();
       } else {
-        _results = allSubServices
-            .where((item) => item.name.toLowerCase().contains(query))
-            .toList();
+        _results = getAllSubServices(
+          Localizations.localeOf(context).languageCode,
+        ).where((item) => item.name.toLowerCase().contains(query)).toList();
       }
     });
   }
@@ -34,7 +34,9 @@ class _ViewAllServicesState extends State<ViewAllServices> {
   Widget build(BuildContext context) {
     final List<SubServiceModel> itemsToShow =
         _results.isEmpty && _controller.text.isEmpty
-        ? popularServices // default popular services
+        ? getPopularServices(
+            Localizations.localeOf(context).languageCode,
+          ) // default popular services
         : _results;
 
     return Scaffold(

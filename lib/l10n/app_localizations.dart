@@ -176,6 +176,42 @@ abstract class AppLocalizations {
   /// **'Already have an account? '**
   String get alreadyHaveAnAcc;
 
+  /// No description provided for @forgotPasswordDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email to reset your password'**
+  String get forgotPasswordDesc;
+
+  /// No description provided for @sendOtp.
+  ///
+  /// In en, this message translates to:
+  /// **'Send OTP'**
+  String get sendOtp;
+
+  /// No description provided for @enterOtp.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter OTP'**
+  String get enterOtp;
+
+  /// No description provided for @newPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'New Password'**
+  String get newPassword;
+
+  /// No description provided for @resetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Password'**
+  String get resetPassword;
+
+  /// No description provided for @rememberYourPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember your password? '**
+  String get rememberYourPassword;
+
   /// No description provided for @helloGuest.
   ///
   /// In en, this message translates to:
@@ -253,6 +289,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Logout'**
   String get logout;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @explore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get explore;
+
+  /// No description provided for @services.
+  ///
+  /// In en, this message translates to:
+  /// **'Services'**
+  String get services;
+
+  /// No description provided for @orders.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders'**
+  String get orders;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @nothingHereYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing Here Yet'**
+  String get nothingHereYet;
+
+  /// No description provided for @lookLikeYouHaventPlaced.
+  ///
+  /// In en, this message translates to:
+  /// **'Looks like you haven’t placed any orders yet.\nStart exploring to find what you need!'**
+  String get lookLikeYouHaventPlaced;
+
+  /// No description provided for @exploreNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore Now'**
+  String get exploreNow;
+
+  /// No description provided for @creativeSolutionsUnder.
+  ///
+  /// In en, this message translates to:
+  /// **'Creative Solutions Under One Roof'**
+  String get creativeSolutionsUnder;
+
+  /// No description provided for @weAreALeading.
+  ///
+  /// In en, this message translates to:
+  /// **'We are a leading creative agency specializing in vehicle branding, digital printing, interior design, and signage. Our mission is to deliver innovative and high-quality solutions that help businesses stand out.'**
+  String get weAreALeading;
+
+  /// No description provided for @ourMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Mission'**
+  String get ourMission;
+
+  /// No description provided for @ourMissionDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'To empower brands with creative solutions that inspire and connect with people.'**
+  String get ourMissionDesc;
+
+  /// No description provided for @ourVision.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Vision'**
+  String get ourVision;
+
+  /// No description provided for @ourVisionDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'To be the go-to creative partner across the UAE for branding and design solutions.'**
+  String get ourVisionDesc;
+
+  /// No description provided for @getInTouch.
+  ///
+  /// In en, this message translates to:
+  /// **'Get in Touch'**
+  String get getInTouch;
+
+  /// No description provided for @addressDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Abu Dhabi, United Arab Emirates'**
+  String get addressDesc;
+
+  /// No description provided for @searchServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Search services...'**
+  String get searchServices;
+
+  /// No description provided for @popularServicesTheseDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular services these days'**
+  String get popularServicesTheseDays;
+
+  /// No description provided for @searchResults.
+  ///
+  /// In en, this message translates to:
+  /// **'Search results'**
+  String get searchResults;
+
+  /// No description provided for @noResultsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No results found'**
+  String get noResultsFound;
+
+  /// No description provided for @exploreOurMainServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore Our Main Services'**
+  String get exploreOurMainServices;
 }
 
 class _AppLocalizationsDelegate

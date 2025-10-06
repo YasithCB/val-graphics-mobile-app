@@ -167,10 +167,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () {
-                        NavigationUtil.pushReplacement(
-                          context,
-                          ForgotPasswordScreen(),
-                        );
+                        NavigationUtil.push(context, ForgotPasswordScreen());
                       },
                       child: Text(
                         AppLocalizations.of(context)!.forgotPassword,

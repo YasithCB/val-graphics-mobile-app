@@ -3,6 +3,8 @@ import 'package:val_graphics_mobile_app/db/constants.dart';
 import 'package:val_graphics_mobile_app/screens/view_all_services_screen.dart';
 import 'package:val_graphics_mobile_app/util/navigation_util.dart';
 
+import '../../l10n/app_localizations.dart';
+
 class OrdersTab extends StatelessWidget {
   const OrdersTab({super.key});
 
@@ -24,8 +26,8 @@ class OrdersTab extends StatelessWidget {
           const SizedBox(height: 24),
 
           // ✨ Title
-          const Text(
-            "Nothing Here Yet",
+          Text(
+            AppLocalizations.of(context)!.nothingHereYet,
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,
@@ -36,8 +38,8 @@ class OrdersTab extends StatelessWidget {
           const SizedBox(height: 8),
 
           // 📝 Subtitle
-          const Text(
-            "Looks like you haven’t placed any orders yet.\nStart exploring to find what you need!",
+          Text(
+            AppLocalizations.of(context)!.lookLikeYouHaventPlaced,
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 16, color: Colors.black54),
           ),
@@ -58,8 +60,8 @@ class OrdersTab extends StatelessWidget {
               NavigationUtil.push(context, ViewAllServices());
             },
             icon: const Icon(Icons.search, size: 20, color: Colors.white),
-            label: const Text(
-              "Explore Now",
+            label: Text(
+              AppLocalizations.of(context)!.exploreNow,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,

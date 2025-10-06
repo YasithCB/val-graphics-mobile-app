@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../db/constants.dart';
 import '../db/services_data.dart';
+import '../l10n/app_localizations.dart';
 import '../widgets/service_card.dart';
 
 class ServicesScreen extends StatelessWidget {
@@ -9,28 +10,21 @@ class ServicesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final servicesList = getServicesList(
+      Localizations.localeOf(context).languageCode,
+    );
     return SafeArea(
       child: Column(
         children: [
-          SizedBox(height: deviceHeight * 0.035),
+          SizedBox(height: deviceHeight * 0.03),
 
           // 🔹 Section Title
-          RichText(
-            text: TextSpan(
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.black, // default color for rest
-              ),
-              children: [
-                TextSpan(
-                  text: "Explore ",
-                  style: TextStyle(
-                    color: primaryColor2, // 🔹 only "Explore" in primary color
-                  ),
-                ),
-                const TextSpan(text: "Our Main Services"),
-              ],
+          Text(
+            AppLocalizations.of(context)!.exploreOurMainServices,
+            style: TextStyle(
+              color: primaryColor,
+              fontSize: 19,
+              fontWeight: FontWeight.bold,
             ),
           ),
 

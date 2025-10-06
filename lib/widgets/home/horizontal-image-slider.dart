@@ -9,6 +9,10 @@ class HorizontalImageGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final popularServices = getPopularServices(
+      Localizations.localeOf(context).languageCode,
+    );
+
     return SizedBox(
       height: 160, // enough space for image + title
       child: GridView.builder(

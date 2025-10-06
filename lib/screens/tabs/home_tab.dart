@@ -28,11 +28,23 @@ class _HomeTabState extends State<HomeTab> {
   }
 
   final Map<String, IconData> serviceIcons = {
-    "Branding": Icons.directions_car,
-    "Interior Fitouts": Icons.chair,
-    "Digital Printing": Icons.print,
-    "Billboard & Signage": Icons.business,
+    "Car Wrapping Services": Icons.directions_car_outlined,
+    "خدمات تغليف السيارات": Icons.directions_car_outlined,
+
+    "Car Tinting And Protection": Icons.beach_access_outlined,
+    "تظليل وحماية السيارات": Icons.beach_access_outlined,
+
+    "Interior Fitouts": Icons.chair_outlined,
+    "تشطيبات داخلية": Icons.chair_outlined,
+
+    "Digital Printing": Icons.print_outlined,
+    "الطباعة الرقمية": Icons.print_outlined,
+
+    "Billboard & Signage": Icons.developer_board,
+    "اللوحات الإعلانية واللافتات": Icons.developer_board,
+
     "Digital Solutions": Icons.computer,
+    "الحلول الرقمية": Icons.computer,
   };
 
   @override
@@ -48,8 +60,6 @@ class _HomeTabState extends State<HomeTab> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 10),
-
               // === Top Row: Avatar + Name/Email + Notification Icon ===
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -159,44 +169,47 @@ class _HomeTabState extends State<HomeTab> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: servicesList.map((service) {
-                  return Expanded(
-                    child: Column(
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            // 🔹 Navigate to Service Details
-                            NavigationUtil.push(
-                              context,
-                              ServiceDetailsScreen(service: service),
-                            );
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: primaryColor5,
+                children:
+                    getServicesList(
+                      Localizations.localeOf(context).languageCode,
+                    ).map((service) {
+                      return Expanded(
+                        child: Column(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                // 🔹 Navigate to Service Details
+                                NavigationUtil.push(
+                                  context,
+                                  ServiceDetailsScreen(service: service),
+                                );
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: primaryColor5,
+                                ),
+                                child: Icon(
+                                  serviceIcons[service.name] ?? Icons.category,
+                                  color: primaryColor,
+                                  size: 24,
+                                ),
+                              ),
                             ),
-                            child: Icon(
-                              serviceIcons[service.name] ?? Icons.category,
-                              color: primaryColor,
-                              size: 25,
+                            const SizedBox(height: 8),
+                            Text(
+                              service.name,
+                              style: const TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              textAlign: TextAlign.center,
                             ),
-                          ),
+                          ],
                         ),
-                        const SizedBox(height: 8),
-                        Text(
-                          service.name,
-                          style: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                  );
-                }).toList(),
+                      );
+                    }).toList(),
               ),
 
               const SizedBox(height: 24),
