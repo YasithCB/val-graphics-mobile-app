@@ -135,6 +135,9 @@ flutter:
     - assets/images/sub-services/ds-1.webp
     - assets/images/sub-services/ds-2.webp
     - assets/images/sub-services/ds-3.webp
+    - assets/images/sub-services/bs-2.webp
+    - assets/images/sub-services/bs-5.webp
+    - assets/images/sub-services/bs-3.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

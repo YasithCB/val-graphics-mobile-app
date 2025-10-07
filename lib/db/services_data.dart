@@ -254,8 +254,8 @@ final List<Map<String, dynamic>> rawCategoriesEn = [
         "We provide complete board solutions, including design, printing, fabrication, and installation of display boards, branding boards, and custom creations.",
     "subcategories": [
       {
-        "name": "Outdoor Signage",
-        "image": "assets/images/sub-services/4.1.webp",
+        "name": "Outdoor Signs",
+        "image": "assets/images/sub-services/4.6.webp",
         "desc":
             "Durable and weather-resistant outdoor signage designed to boost visibility. Ideal for shopfronts, building facades, and high-traffic areas with lasting impact.",
         "materials": [
@@ -265,8 +265,8 @@ final List<Map<String, dynamic>> rawCategoriesEn = [
         ],
       },
       {
-        "name": "Indoor Signage",
-        "image": "assets/images/sub-services/4.2.webp",
+        "name": "Indoor Signs",
+        "image": "assets/images/sub-services/bs-2.webp",
         "desc":
             "Custom indoor signage for offices, retail stores, and events. Delivers a clean, professional look to guide, inform, and enhance branding within interior spaces.",
         "materials": [
@@ -276,8 +276,19 @@ final List<Map<String, dynamic>> rawCategoriesEn = [
         ],
       },
       {
+        "name": "Safety Signs",
+        "image": "assets/images/sub-services/4.3.webp",
+        "desc":
+            "Regulation-compliant safety signage for workplaces, factories, and public spaces. Clear visuals ensure safety awareness and compliance with standards.",
+        "materials": [
+          {"name": "Reflective Safety Sign Board", "ratePerSqFt": 18},
+          {"name": "Glow-in-the-Dark Safety Sign", "ratePerSqFt": 22},
+          {"name": "Acrylic Safety Sign Plate", "ratePerSqFt": 15},
+        ],
+      },
+      {
         "name": "Billboards",
-        "image": "assets/images/sub-services/4.5.webp",
+        "image": "assets/images/sub-services/bs-3.webp",
         "desc":
             "High-visibility billboard solutions for impactful outdoor advertising. Perfect for highways, rooftops, and cityscapes with large-scale brand exposure.",
         "materials": [
@@ -298,42 +309,14 @@ final List<Map<String, dynamic>> rawCategoriesEn = [
         ],
       },
       {
-        "name": "Acrylic Sign Boards",
-        "image": "assets/images/sub-services/2.2.webp",
+        "name": "Acrylic Signs",
+        "image": "assets/images/sub-services/bs-5.webp",
         "desc":
             "Premium acrylic sign boards ideal for indoor and outdoor branding. Long-lasting, weather-resistant, and available in glossy, frosted, or backlit styles for modern signage.",
         "materials": [
           {"name": "Glossy Acrylic Sign Board", "ratePerSqFt": 22},
           {"name": "Frosted Acrylic Sign Board", "ratePerSqFt": 25},
           {"name": "Backlit Acrylic Sign Board", "ratePerSqFt": 28},
-        ],
-      },
-      {
-        "name": "Road Sign Boards",
-        "image": "assets/images/sub-services/4.6.webp",
-        "desc":
-            "Durable road sign boards designed for maximum visibility and safety. Made with reflective materials and weatherproof finishes for highways, streets, and commercial use.",
-        "materials": [
-          {"name": "Aluminium Reflective Road Sign", "ratePerSqFt": 30},
-          {
-            "name": "ACP (Aluminium Composite Panel) Road Sign",
-            "ratePerSqFt": 28,
-          },
-          {
-            "name": "High-Intensity Prismatic Reflective Sign",
-            "ratePerSqFt": 35,
-          },
-        ],
-      },
-      {
-        "name": "Safety Signs",
-        "image": "assets/images/sub-services/4.3.webp",
-        "desc":
-            "Regulation-compliant safety signage for workplaces, factories, and public spaces. Clear visuals ensure safety awareness and compliance with standards.",
-        "materials": [
-          {"name": "Reflective Safety Sign Board", "ratePerSqFt": 18},
-          {"name": "Glow-in-the-Dark Safety Sign", "ratePerSqFt": 22},
-          {"name": "Acrylic Safety Sign Plate", "ratePerSqFt": 15},
         ],
       },
     ],
@@ -629,89 +612,75 @@ final List<Map<String, dynamic>> rawCategoriesAr = [
     ],
   },
   {
-    "name": "اللوحات الإعلانية واللافتات",
+    "name": "اللوحات والإشارات",
     "image": "assets/images/services/3.webp",
     "description":
-        "نقدم حلولاً متكاملة للوحة الإعلانات، بما في ذلك التصميم، الطباعة، التصنيع، وتركيب اللوحات الإعلانية، ولوحات العلامة التجارية، والإبداعات المخصصة.",
+        "نحن نوفر حلولًا متكاملة للّوحات تشمل التصميم والطباعة والتصنيع والتركيب للّوحات الإعلانية والعلامات التجارية والابتكارات المخصصة.",
     "subcategories": [
       {
-        "name": "اللافتات الخارجية",
-        "image": "assets/images/sub-services/4.1.webp",
-        "desc":
-            "لافتات خارجية متينة ومقاومة للعوامل الجوية مصممة لتعزيز الرؤية. مثالية لواجهات المتاجر، واجهات المباني، والمناطق ذات الحركة العالية لتحقيق تأثير طويل الأمد.",
-        "materials": [
-          {"name": "لوحة مركبة من الألومنيوم (ACP)", "ratePerSqFt": 18},
-          {"name": "لوحة PVC مقاومة للعوامل الجوية", "ratePerSqFt": 12},
-          {"name": "حروف LED مضيئة", "ratePerLetter": 40},
-        ],
-      },
-      {
-        "name": "اللافتات الداخلية",
-        "image": "assets/images/sub-services/4.2.webp",
-        "desc":
-            "لافتات داخلية مخصصة للمكاتب، والمتاجر، والفعاليات. تقدم مظهراً نظيفاً واحترافياً لتوجيه وإعلام وتعزيز العلامة التجارية داخل المساحات الداخلية.",
-        "materials": [
-          {"name": "لافتة ورقة أكريليك", "ratePerSqFt": 20},
-          {"name": "لافتة لوحة فوم", "ratePerSqFt": 8},
-          {"name": "حروف مقطوعة من الفينيل", "ratePerSqFt": 10},
-        ],
-      },
-      {
-        "name": "اللوحات الإعلانية",
-        "image": "assets/images/sub-services/4.5.webp",
-        "desc":
-            "حلول لوحات إعلانية عالية الرؤية للإعلانات الخارجية المؤثرة. مثالية للطرق السريعة، الأسطح، والمدن لزيادة التعريف بالعلامة التجارية على نطاق واسع.",
-        "materials": [
-          {"name": "لوحة إعلانات فليكس", "ratePerSqFt": 12},
-          {"name": "طباعة لوحة إعلانات فينيل", "ratePerSqFt": 14},
-          {"name": "لوحة إعلانات ثلاثية الأبعاد / مخصصة", "ratePerSqFt": 25},
-        ],
-      },
-      {
-        "name": "لوحات سكوتر أكريليك",
-        "image": "assets/images/sub-services/2.1.webp",
-        "desc":
-            "لوحات سكوتر أكريليك متينة وأنيقة مصممة للعلامة التجارية والإعلانات المخصصة. متوفرة بلمسات شفافة، ملونة، أو عاكسة لجذب الانتباه.",
-        "materials": [
-          {"name": "لوحة أكريليك صافية 5 مم", "ratePerSqFt": 20},
-          {"name": "لوحة أكريليك ملونة / مصبوغة 5 مم", "ratePerSqFt": 25},
-          {"name": "لوحة أكريليك بلمسة عاكسة 5 مم", "ratePerSqFt": 30},
-        ],
-      },
-      {
-        "name": "لوحات العلامة الأكريليكية",
-        "image": "assets/images/sub-services/2.2.webp",
-        "desc":
-            "لوحات علامة أكريليكية مميزة مثالية للعلامات الداخلية والخارجية. طويلة الأمد، مقاومة للعوامل الجوية، ومتوفرة بأساليب لامعة، مطفية، أو مضاءة من الخلف للعرض العصري.",
-        "materials": [
-          {"name": "لوحة علامة أكريليك لامعة", "ratePerSqFt": 22},
-          {"name": "لوحة علامة أكريليك مطفية", "ratePerSqFt": 25},
-          {"name": "لوحة علامة أكريليك مضاءة من الخلف", "ratePerSqFt": 28},
-        ],
-      },
-      {
-        "name": "لوحات علامات الطرق",
+        "name": "اللوحات الخارجية",
         "image": "assets/images/sub-services/4.6.webp",
         "desc":
-            "لوحات علامات طرق متينة مصممة لتحقيق أقصى قدر من الرؤية والسلامة. مصنوعة من مواد عاكسة وتشطيبات مقاومة للعوامل الجوية للطرق السريعة والشوارع والاستخدام التجاري.",
+            "لافتات خارجية متينة ومقاومة للعوامل الجوية مصممة لتعزيز الظهور. مثالية لواجهات المتاجر والمباني والمناطق ذات الحركة العالية لتأثير يدوم طويلًا.",
         "materials": [
-          {"name": "لوحة علامة طريق عاكسة من الألومنيوم", "ratePerSqFt": 30},
-          {
-            "name": "لوحة علامة طريق من لوح مركب من الألومنيوم (ACP)",
-            "ratePerSqFt": 28,
-          },
-          {"name": "لوحة علامة عاكسة مكثفة عالية", "ratePerSqFt": 35},
+          {"name": "ألواح الألمنيوم المركبة (ACP)", "ratePerSqFt": 18},
+          {"name": "لوح PVC مقاوم للعوامل الجوية", "ratePerSqFt": 12},
+          {"name": "حروف مضيئة LED", "ratePerLetter": 40},
+        ],
+      },
+      {
+        "name": "اللوحات الداخلية",
+        "image": "assets/images/sub-services/bs-2.webp",
+        "desc":
+            "لافتات داخلية مخصصة للمكاتب والمتاجر والمناسبات، تمنح مظهرًا احترافيًا أنيقًا لتوجيه العملاء وتعزيز الهوية البصرية داخل المساحات الداخلية.",
+        "materials": [
+          {"name": "لافتة أكريليك", "ratePerSqFt": 20},
+          {"name": "لافتة من لوح الفوم", "ratePerSqFt": 8},
+          {"name": "حروف مقطعة من الفينيل", "ratePerSqFt": 10},
         ],
       },
       {
         "name": "لوحات السلامة",
         "image": "assets/images/sub-services/4.3.webp",
         "desc":
-            "لافتات السلامة المطابقة للمعايير للمواقع، المصانع، والأماكن العامة. صور واضحة تضمن التوعية بالسلامة والامتثال للمعايير.",
+            "لوحات سلامة مطابقة للمعايير للمصانع وأماكن العمل والأماكن العامة، بتصميمات واضحة تضمن الوعي بالسلامة والامتثال للأنظمة.",
         "materials": [
-          {"name": "لوحة علامة سلامة عاكسة", "ratePerSqFt": 18},
-          {"name": "لوحة علامة سلامة تتوهج في الظلام", "ratePerSqFt": 22},
-          {"name": "لوحة علامة سلامة أكريليكية", "ratePerSqFt": 15},
+          {"name": "لوحة سلامة عاكسة", "ratePerSqFt": 18},
+          {"name": "لوحة سلامة مضيئة في الظلام", "ratePerSqFt": 22},
+          {"name": "لوحة سلامة أكريليك", "ratePerSqFt": 15},
+        ],
+      },
+      {
+        "name": "اللوحات الإعلانية",
+        "image": "assets/images/sub-services/bs-3.webp",
+        "desc":
+            "حلول لوحات إعلانية عالية الوضوح لإعلانات خارجية مؤثرة. مثالية للطرق السريعة والأسطح والمدن لتوفير انتشار واسع للعلامة التجارية.",
+        "materials": [
+          {"name": "لوحة فليكس", "ratePerSqFt": 12},
+          {"name": "طباعة لوحة فينيل", "ratePerSqFt": 14},
+          {"name": "لوحة ثلاثية الأبعاد / مخصصة", "ratePerSqFt": 25},
+        ],
+      },
+      {
+        "name": "لوحات الأكريليك المتنقلة",
+        "image": "assets/images/sub-services/2.1.webp",
+        "desc":
+            "ألواح أكريليك متينة وأنيقة مصممة للإعلانات والعلامات التجارية المخصصة. متوفرة بخامات شفافة أو ملونة أو عاكسة لتصميمات جذابة.",
+        "materials": [
+          {"name": "لوح أكريليك شفاف 5 ملم", "ratePerSqFt": 20},
+          {"name": "لوح أكريليك ملون / مظلل 5 ملم", "ratePerSqFt": 25},
+          {"name": "لوح أكريليك بلمسة مرآة 5 ملم", "ratePerSqFt": 30},
+        ],
+      },
+      {
+        "name": "لوحات الأكريليك",
+        "image": "assets/images/sub-services/bs-5.webp",
+        "desc":
+            "لوحات أكريليك فاخرة مثالية للإعلانات الداخلية والخارجية. مقاومة للعوامل الجوية ومتوفرة بتشطيبات لامعة أو مضببة أو مضيئة من الخلف بتصميم عصري.",
+        "materials": [
+          {"name": "لوحة أكريليك لامعة", "ratePerSqFt": 22},
+          {"name": "لوحة أكريليك مضببة", "ratePerSqFt": 25},
+          {"name": "لوحة أكريليك مضيئة من الخلف", "ratePerSqFt": 28},
         ],
       },
     ],
